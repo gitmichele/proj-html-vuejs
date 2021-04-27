@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex-row{
+    display: flex;
+    width: 100%;
+}
+.col2-half{
+    width: 50%;
+}
+
+
+// HEADER
+// jumbotron
+#jumbotron{
+    padding-top: 137px;
+    
+    .jumbo-text{
+        padding: 70px 15px;
+
+        .title-container{
+            width: 440px;
+        }
+        .button-container{
+
+            margin-top: 49px;
+        }
+    }
+
+    .jumbo-img{
+        padding: 15px;
+    }
+}

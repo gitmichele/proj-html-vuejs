@@ -1,0 +1,40 @@
+body{
+    color: #696969;
+    font-family: Gilroy;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.74;
+}
+// mixin-text
+@mixin main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.34em;
+    text-transform: capitalize;
+}
+@mixin section-small-title{
+    font-size: 15px;
+    font-weight: 500;   
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+@mixin section-main-title{
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+@mixin jumbo-p{
+    font-size: 16px;
+    line-height: 1.875em;
+    margin-top: 25px;
+}
+// var-text
+$primary-color: #20AD96;
+$light-p: #7E7E7E;
+$cards-title: #3F3A64;
+$hover-button: #3F3A64;
+$base-color: #333;

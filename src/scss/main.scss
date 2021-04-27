@@ -1,0 +1,53 @@
+// IMPORT
+@import 'partials/base';
+@import 'partials/components';
+@import 'partials/layout';
+
+
+// HEADER
+// jumbotron
+header{
+
+    background-color: #F6F6FD; 
+    background-image: url(../img/background-pattern-wavify.png);
+
+    #jumbotron{
+
+        .jumbo-text{
+
+            .title-container{
+
+                h3{
+                @include section-small-title;
+                color: $base-color
+                }
+                h1{
+                    @include main-title; 
+                    color: $base-color
+                }
+                p{
+                    @include jumbo-p;
+                }
+            }
+            .button-container{
+
+                a{
+
+                    &:hover{
+
+                        background-color: $hover-button;
+                    }
+                }
+            }
+        }
+
+        .jumbo-img{
+
+            background-image: url(../img/home-movation-shape-face.png);
+
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+}
