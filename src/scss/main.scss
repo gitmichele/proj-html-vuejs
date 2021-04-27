@@ -66,14 +66,47 @@ header{
 // dati/prima sezione del main
 .data-container{
 
-    .number-container{
-        // background-image: url(../img/background-pattern-grid-line-06.png);
-        // background-size: cover;
+    div:last-child{
 
-        div:last-child{
+    @include section-small-title;
+        color: $base-color;
+    }
+}
 
-            @include section-small-title;
+// about me
+#about-container{
+
+    .section-small-title{
+        @include section-small-title;
+        color: $primary-color;
+    }
+
+    .col2-half:first-child{
+
+        .section-main-title{
+            @include section-main-title;
             color: $base-color;
+        }
+    }
+
+    .col2-half:last-child{
+        font-family: roboto;
+        
+        h4{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.78em;
+            color: $base-color;
+            margin-bottom: 15px;
+
+            span{
+                color: $primary-color;
+            }
+        }
+
+        p{
+            @include main-p;
+            color: $light-p;
         }
     }
 }

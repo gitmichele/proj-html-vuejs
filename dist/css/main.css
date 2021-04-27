@@ -88,12 +88,20 @@ body {
   width: 100%;
 }
 
+.useless-padding {
+  padding: 0 15px;
+}
+
 .col2-half {
   width: 50%;
 }
 
 .col4 {
   width: 25%;
+}
+
+.set-title-w {
+  width: 430px;
 }
 
 header nav {
@@ -131,10 +139,10 @@ header #jumbotron .jumbo-img {
   margin-bottom: -10px;
 }
 
-.data-container {
-  padding: 132px 15px 82px 15px;
+#data-container {
+  padding: 132px 0 82px 0;
 }
-.data-container .number-container {
+#data-container .number-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -143,8 +151,16 @@ header #jumbotron .jumbo-img {
   align-items: center;
   border-left: 1px dashed #20AD96;
 }
-.data-container .col4:last-child .number-container {
+#data-container .col4:last-child .number-container {
   border-right: 1px dashed #20AD96;
+}
+
+#about-container {
+  padding: 10px 0 100px 0;
+}
+#about-container .section-small-title {
+  padding: 0 15px;
+  margin-bottom: 18px;
 }
 
 header {
@@ -185,11 +201,45 @@ header #jumbotron .jumbo-img img {
   max-width: 100%;
 }
 
-.data-container .number-container div:last-child {
+.data-container div:last-child {
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 2em;
   letter-spacing: 2px;
   color: #333;
+}
+
+#about-container .section-small-title {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 2px;
+  color: #20AD96;
+}
+#about-container .col2-half:first-child .section-main-title {
+  font-family: "Playfair Display", Sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #333;
+}
+#about-container .col2-half:last-child {
+  font-family: roboto;
+}
+#about-container .col2-half:last-child h4 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.78em;
+  color: #333;
+  margin-bottom: 15px;
+}
+#about-container .col2-half:last-child h4 span {
+  color: #20AD96;
+}
+#about-container .col2-half:last-child p {
+  font-size: 15px;
+  line-height: 1.6em;
+  color: #7E7E7E;
 }

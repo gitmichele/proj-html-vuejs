@@ -41,6 +41,10 @@ $base-color: #333;
     line-height: 1.875em;
     margin-top: 25px;
 }
+@mixin main-p{
+    font-size: 15px;
+    line-height: 1.6em;
+}
 @mixin nav-links-text {
     font-family: roboto;
     text-decoration: none;

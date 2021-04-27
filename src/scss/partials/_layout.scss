@@ -11,11 +11,17 @@
     display: flex;
     width: 100%;
 }
+.useless-padding{
+    padding: 0 15px;
+}
 .col2-half{
     width: 50%;
 }
 .col4{
     width: 25%;
+}
+.set-title-w{
+    width: 430px;
 }
 
 
@@ -70,9 +76,9 @@ header{
 
 // MAIN
 // dati/prima sezione del main
-.data-container{
+#data-container{
 
-    padding: 132px 15px 82px 15px;
+    padding: 132px 0 82px 0;
 
     .number-container{
 
@@ -86,5 +92,16 @@ header{
     }
     .col4:last-child .number-container{
         border-right: 1px dashed $primary-color;
+    }
+}
+
+
+// about me
+#about-container{
+    padding: 10px 0 100px 0;
+
+    .section-small-title{
+        padding: 0 15px;
+        margin-bottom: 18px;
     }
 }
