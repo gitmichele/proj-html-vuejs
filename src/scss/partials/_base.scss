@@ -64,3 +64,12 @@ $base-color: #333;
     line-height: 1.916em;
     letter-spacing: 0em;
 }
+@mixin card-title{
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 700;
+    letter-spacing: 0em;
+    color: $cards-title;
+    font-family: roboto;
+    text-transform: capitalize;
+}

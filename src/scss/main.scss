@@ -77,15 +77,21 @@ header{
 #about-container{
 
     .section-small-title{
+        
+        h3{
         @include section-small-title;
         color: $primary-color;
+        }
     }
 
     .col2-half:first-child{
 
         .section-main-title{
-            @include section-main-title;
-            color: $base-color;
+
+            h2{
+                @include section-main-title;
+                color: $base-color;
+            }
         }
     }
 
@@ -126,6 +132,33 @@ header{
         .text-quote-container{
             @include quote;
             color: $base-color;
+        }
+    }
+}
+
+// begin your journey
+#journey-container{
+
+    .section-small-title{
+
+        h3{
+            @include section-small-title;
+        }
+    }
+    .section-main-title{
+        
+        h2{
+            span{
+                @include main-title;
+                font-size: 48px;
+            }
+            span:first-child{
+
+                color: $base-color;
+            }
+            span:last-child{
+                color: $primary-color;
+            }
         }
     }
 }

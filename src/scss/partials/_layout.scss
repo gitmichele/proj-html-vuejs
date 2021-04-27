@@ -33,6 +33,12 @@
 .set-title-w{
     width: 430px;
 }
+.center-row{
+    text-align: center;
+}
+.col3{
+    width: calc(100% / 3);
+}
 
 
 // HEADER
@@ -134,5 +140,35 @@ header{
                 transform: translate(-50%, -50%);
             }
         }
+    }
+}
+
+// begin your journey
+#journey-container{
+    padding: 155px 0 100px 0;
+
+    .section-small-title{
+        margin-bottom: 13px;
+    }
+
+    .section-main-title{
+        margin-bottom: 65px;
+    }
+
+    .courses-container{
+
+        .flex-row{
+            margin-bottom: 30px;
+
+            .cards-container{
+
+                .flex-row{
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    .center-row.button-container{
+        padding-top: 30px;
     }
 }

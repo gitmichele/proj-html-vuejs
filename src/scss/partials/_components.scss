@@ -117,3 +117,45 @@
         }
     }
 }
+
+// card
+.card-container{
+    padding: 15px;
+
+        figure{
+            width: 100%;
+
+            img{
+                width: 100%;
+            }
+        }
+        .card-text{
+            padding: 30px 30px 38px;
+
+            .cost{
+                line-height: 0;
+                margin-bottom: 25px;
+
+                span:first-child{
+
+                    font-size: 24px;
+                }
+                span:last-child{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+            .card-title{
+                @include card-title;
+                margin-bottom: 30px;
+            }
+
+            .card-details{
+
+                > span{
+                    font-size: 14px;
+                    margin-right: 30px;
+                }
+            }
+        }
+}
