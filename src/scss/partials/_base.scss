@@ -32,9 +32,22 @@ body{
     line-height: 1.875em;
     margin-top: 25px;
 }
+@mixin nav-links-text {
+    font-family: roboto;
+    text-decoration: none;
+    padding: 29px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+@mixin social-incon{
+    font-size: 18px;
+    color: $base-color;
+}
 // var-text
 $primary-color: #20AD96;
 $light-p: #7E7E7E;
 $cards-title: #3F3A64;
+$nav-links: #3F3A64;
 $hover-button: #3F3A64;
 $base-color: #333;

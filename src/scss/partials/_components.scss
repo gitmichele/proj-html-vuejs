@@ -27,3 +27,43 @@
         }
     }
 }
+
+// header-navbar
+.navbar-container{
+
+    ul{
+        list-style: none;
+
+        li{
+            display: inline-block;
+
+            a{
+                @include nav-links-text;
+
+                .navbar-icon{
+                    margin-left: 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.social-container{
+
+    ul{
+        list-style: none;
+
+        li{
+            display: inline-block;
+
+            a{
+                padding: 0 10px;
+
+                i{
+                    @include social-incon;
+                }
+            }
+        }
+    }
+}

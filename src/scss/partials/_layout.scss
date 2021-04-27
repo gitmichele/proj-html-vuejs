@@ -18,8 +18,30 @@
 
 // HEADER
 // jumbotron
-#jumbotron{
+header{
+
+    nav{
+        position: fixed;
+        display: flex;
+        width: 1200px;
+        padding: 0 15px;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-container{
+
+            width: 158px;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    #jumbotron{
     padding-top: 137px;
+    width: 100%;
     
     .jumbo-text{
         padding: 70px 15px;
@@ -36,4 +58,5 @@
     .jumbo-img{
         padding: 15px;
     }
+}
 }
