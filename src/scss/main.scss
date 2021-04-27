@@ -162,3 +162,55 @@ header{
         }
     }
 }
+
+// book store
+#book-store-container{
+
+    .section-small-title{
+
+        h3{
+            @include section-small-title;
+            color: $base-color;
+        }
+    }
+    .section-main-title{
+
+        h2{
+            @include section-main-title;
+
+            span:first-child{
+                color: $cards-title;
+            }
+            span:last-child{
+                color: $primary-color;
+            }
+        }
+    }
+
+    .list-container{
+
+        ul{
+            list-style: none;
+
+            li{
+
+                a{
+                    text-decoration: none;
+                    
+                    span:first-child{
+                        font-size: 15px;
+                        min-width: 24px;
+                        color: $primary-color;
+                    }
+                    span:last-child{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $light-p;
+                        font-family: roboto;
+                        white-space: 0;
+                    }
+                }
+            }
+        }
+    }
+}
