@@ -91,7 +91,7 @@ header{
 
     .col2-half:last-child{
         font-family: roboto;
-        
+
         h4{
             font-size: 18px;
             font-weight: 400;
@@ -107,6 +107,25 @@ header{
         p{
             @include main-p;
             color: $light-p;
+        }
+    }
+}
+
+// video+cit
+#video-section{
+
+    .video-container{
+
+        img{
+            border-radius: 5px;
+        }
+    }
+
+    .quote-container{
+
+        .text-quote-container{
+            @include quote;
+            color: $base-color;
         }
     }
 }

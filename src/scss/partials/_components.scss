@@ -76,3 +76,44 @@
     color: $primary-color;
     font-family: roboto;
 }
+
+// quote
+.quote-container{
+    padding: 55px;
+
+    .flex-col{
+
+        align-items: center;
+        justify-content: space-between;
+
+        .text-quote-container{
+            margin-bottom: 54px;;
+        }
+        .quote-logo{
+            text-align: left;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .quote-author{
+
+            width: 100%;
+            text-align: left;
+            font-size: 21px;
+            font-weight: 500;
+            color: #3F3A64;
+            font-family: roboto;
+        }
+        .quote-wingman{
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1.5em;
+            letter-spacing: 1.38px;
+            color: #8C89A2;
+            font-family: roboto;
+            width: 100%;
+            text-align: left;
+            align-self: flex-end;
+        }
+    }
+}

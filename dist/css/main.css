@@ -72,6 +72,42 @@ body {
   font-family: roboto;
 }
 
+.quote-container {
+  padding: 55px;
+}
+.quote-container .flex-col {
+  align-items: center;
+  justify-content: space-between;
+}
+.quote-container .flex-col .text-quote-container {
+  margin-bottom: 54px;
+}
+.quote-container .flex-col .quote-logo {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.quote-container .flex-col .quote-author {
+  width: 100%;
+  text-align: left;
+  font-size: 21px;
+  font-weight: 500;
+  color: #3F3A64;
+  font-family: roboto;
+}
+.quote-container .flex-col .quote-wingman {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  letter-spacing: 1.38px;
+  color: #8C89A2;
+  font-family: roboto;
+  width: 100%;
+  text-align: left;
+  align-self: flex-end;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -88,12 +124,25 @@ body {
   width: 100%;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .useless-padding {
   padding: 0 15px;
 }
 
 .col2-half {
   width: 50%;
+}
+
+.col2-big {
+  width: 60%;
+}
+
+.col2-small {
+  width: 40%;
 }
 
 .col4 {
@@ -161,6 +210,19 @@ header #jumbotron .jumbo-img {
 #about-container .section-small-title {
   padding: 0 15px;
   margin-bottom: 18px;
+}
+
+#video-section .video-container .link-video-container {
+  height: 450px;
+  width: 670px;
+  position: relative;
+  box-shadow: 0px 130px 50px -100px rgba(51, 51, 51, 0.22);
+}
+#video-section .video-container .link-video-container img:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header {
@@ -242,4 +304,16 @@ header #jumbotron .jumbo-img img {
   font-size: 15px;
   line-height: 1.6em;
   color: #7E7E7E;
+}
+
+#video-section .video-container img {
+  border-radius: 5px;
+}
+#video-section .quote-container .text-quote-container {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.916em;
+  letter-spacing: 0em;
+  color: #333;
 }
