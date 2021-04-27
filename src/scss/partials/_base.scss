@@ -6,6 +6,15 @@ body{
     letter-spacing: 0em;
     line-height: 1.74;
 }
+
+// var-text
+$primary-color: #20AD96;
+$light-p: #7E7E7E;
+$cards-title: #3F3A64;
+$nav-links: #3F3A64;
+$hover-button: #3F3A64;
+$base-color: #333;
+
 // mixin-text
 @mixin main-title {
     font-family: 'Playfair Display', serif;
@@ -44,10 +53,3 @@ body{
     font-size: 18px;
     color: $base-color;
 }
-// var-text
-$primary-color: #20AD96;
-$light-p: #7E7E7E;
-$cards-title: #3F3A64;
-$nav-links: #3F3A64;
-$hover-button: #3F3A64;
-$base-color: #333;

@@ -61,3 +61,19 @@ header{
         }
     }
 }
+
+// MAIN
+// dati/prima sezione del main
+.data-container{
+
+    .number-container{
+        // background-image: url(../img/background-pattern-grid-line-06.png);
+        // background-size: cover;
+
+        div:last-child{
+
+            @include section-small-title;
+            color: $base-color;
+        }
+    }
+}

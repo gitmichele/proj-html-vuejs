@@ -65,6 +65,13 @@ body {
   color: #333;
 }
 
+.highlighted-num {
+  font-size: 40px;
+  font-weight: 600;
+  color: #20AD96;
+  font-family: roboto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -85,6 +92,10 @@ body {
   width: 50%;
 }
 
+.col4 {
+  width: 25%;
+}
+
 header nav {
   position: fixed;
   display: flex;
@@ -103,6 +114,7 @@ header nav .logo-container img {
 header #jumbotron {
   padding-top: 137px;
   width: 100%;
+  overflow: hidden;
 }
 header #jumbotron .jumbo-text {
   padding: 70px 15px;
@@ -115,6 +127,24 @@ header #jumbotron .jumbo-text .button-container {
 }
 header #jumbotron .jumbo-img {
   padding: 15px;
+  padding-bottom: 0;
+  margin-bottom: -10px;
+}
+
+.data-container {
+  padding: 132px 15px 82px 15px;
+}
+.data-container .number-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px dashed #20AD96;
+}
+.data-container .col4:last-child .number-container {
+  border-right: 1px dashed #20AD96;
 }
 
 header {
@@ -153,4 +183,13 @@ header #jumbotron .jumbo-img {
 }
 header #jumbotron .jumbo-img img {
   max-width: 100%;
+}
+
+.data-container .number-container div:last-child {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 2px;
+  color: #333;
 }

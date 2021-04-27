@@ -49,6 +49,7 @@
     }
 }
 
+// social nabar
 .social-container{
 
     ul{
@@ -66,4 +67,12 @@
             }
         }
     }
+}
+
+// numbers
+.highlighted-num{
+    font-size: 40px;
+    font-weight: 600;
+    color: $primary-color;
+    font-family: roboto;
 }
