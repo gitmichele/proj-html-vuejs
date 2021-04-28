@@ -41,77 +41,6 @@ header{
                     @include jumbo-p;
                 }
             }
-            .button-container{
-
-
-// FOOTER
-footer{
-    background-color: $footer-bg;
-    color: $footer-text;
-
-    .flex-row{
-
-        .footer-title{
-            @include footer-title;
-        }
-
-        .col2-half:first-child{
-
-            .footer-text{
-                @include footer-links;
-
-                a{
-                    text-decoration: none;
-                    color: #ABABAB;
-                }
-            }
-            .social-container{
-
-                i{
-                    color: $footer-text;
-                    font-size: 21px;
-                }
-            }
-        }
-
-        .col2-half:last-child{
-
-            ul{
-                list-style: none;
-
-                li{
-
-                    a{
-                        text-decoration: none;
-                        @include footer-links
-                    }
-                }
-            }
-        }
-    }
-    .center-row{
-
-        span{
-            font-size: 14px;
-            font-family: roboto;
-            font-weight: 400;
-            letter-spacing: 0em;
-            line-height: 1.74;
-        
-            i{
-                font-size: 12px;
-            }
-        }
-    }
-}
-                a{
-
-                    &:hover{
-
-                        background-color: $hover-button;
-                    }
-                }
-            }
         }
 
         .jumbo-img{
@@ -317,8 +246,15 @@ footer{
         list-style: none;
 
         img{
+            transition: .3s;
             filter: brightness( 50% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
             opacity: 0.2;
+
+            &:hover{
+                filter: brightness(100%);
+                color: $primary-color;
+                opacity: 1;
+            }
         }
 
     }
@@ -428,12 +364,25 @@ footer{
                     text-decoration: none;
                     color: #ABABAB;
                 }
+
+                div:last-child{
+
+                    a{
+                        &:hover{
+                            color: $primary-color;
+                        }
+                    }
+                }
             }
             .social-container{
 
                 i{
                     color: $footer-text;
                     font-size: 21px;
+                
+                    &:hover{
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -447,7 +396,12 @@ footer{
 
                     a{
                         text-decoration: none;
-                        @include footer-links
+                        @include footer-links;
+
+                        &:hover{
+
+                            color: $primary-color;
+                        }
                     }
                 }
             }

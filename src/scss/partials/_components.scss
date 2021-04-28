@@ -10,6 +10,7 @@
         cursor: pointer;    
         padding: 18px 55px;
         border-radius: 5px;
+        transition: .4s;
 
         div{
             display: inline-block;
@@ -24,6 +25,9 @@
         }
         .button-icon{
             margin-left: 10px;
+        }
+        &:hover{
+           background-color: $hover-button;
         }
     }
 }
@@ -44,6 +48,29 @@
                     margin-left: 5px;
                     font-size: 12px;
                 }
+                span:first-child{
+                    position: relative;
+                }
+                span:first-child:after{
+                    content: ""; /* This is necessary for the pseudo element to work. */ 
+                    display: block; /* This will put the pseudo element on its own line. */
+                    position: absolute;
+                    width: 0; /* Change this to whatever width you want to have before hover. */
+                    border-bottom: 1px solid black; /* This creates the border. Replace black with whatever color you want. */
+                    transition: .5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+                    bottom: -5px;
+                    left: 0;
+                    border-color: $primary-color;
+                }
+                &:hover{
+
+                    color: $primary-color;
+
+                    span:first-child:after{
+
+                        width: 115%;
+                    }
+                }
             }
         }
     }
@@ -54,18 +81,85 @@
 
     ul{
         list-style: none;
+        display: flex;
+        justify-content: flex-start;
 
         li{
-            display: inline-block;
+            position: relative;
 
             a{
-                padding: 0 10px;
+                padding-right: 30px;
 
                 i{
                     @include social-incon;
                 }
             }
+            .cloud-msg{
+
+                top: unset;
+                bottom: -45px;
+                right: 50%;
+                transform: translate(0, 0);
+                background-color: $base-color;
+                border-color: $base-color;
+
+                &:after{
+                    background-color:$base-color;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    right: 2px;
+                    top: -2px; 
+                }
+            }
+            &:hover{
+                i{
+                    color: $primary-color;
+                }
+
+                .cloud-msg{
+                    animation-name: pop-out-under;
+                    animation-duration: .5s;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
+    }
+}
+
+// cloud message pop
+.cloud-msg{
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1);
+    white-space: nowrap;
+    top: 50%;
+    right: 35px;
+    transform: translate(-25px, -50%);
+    padding: 3px 12px;
+    border: 3px solid;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+
+    &:after{
+        content: "";
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        background-color:$primary-color;
+        transform: translate(-50%, -50%) rotate(45deg);
+        right: -13px;
+        top: 50%; 
+    }
+
+    div{
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: roboto;
+        position: relative;
     }
 }
 
@@ -207,58 +301,14 @@
             }
         }
         .cloud-msg{
-            transition: visibility 0s, opacity 0.5s linear;
-            position: absolute;
-            visibility: hidden;
-            opacity: 0;
-            transform: scale(1);
-            white-space: nowrap;
-            top: 50%;
-            right: 35px;
-            transform: translate(-25px, -50%);
-            padding: 3px 12px;
-            border: 3px solid $primary-color;
+
             background-color: $primary-color;
-            border-radius: 5px;
-
-            &:after{
-                content: "";
-                display: inline-block;
-                height: 10px;
-                width: 10px;
-                position: absolute;
-                background-color:$primary-color;
-                transform: translate(-50%, -50%) rotate(45deg);
-                right: -13px;
-                top: 50%;
-                
-            }
-
-            div{
-                color: #fff;
-                font-size: 14px;
-                font-weight: 500;
-                font-family: roboto;
-                position: relative;
-            }
+            border-color: $primary-color;
         }
         &:hover{
             .cloud-msg{
-                animation-name: pop-out;
+                animation-name: pop-out-left;
                 animation-duration: .5s;
-                visibility: visible;
-                opacity: 1;
-
-            }
-        }
-        @keyframes pop-out {
-            50% {
-                transform: translate(-25px, -50%) scale(1.1);
-                visibility: visible;
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-25px, -50%) scale(1);
                 visibility: visible;
                 opacity: 1;
             }
@@ -300,10 +350,23 @@
     }
 }
 
+// hidden box for border magic
+.hidden-box{
+    transition: .6s;
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    bottom: -7px;
+    left: -3px;
+}
+
 //fancy link
 .fancy-link{
 
     .fancy-link-text{
+        position: relative;
 
         a{
             font-size: 13px;
@@ -316,6 +379,26 @@
             color: $primary-color;
             border-bottom: 1px solid $primary-color;
             font-family: roboto;
+            transition: .6s;
+        }
+        &:hover{
+
+            .hidden-box{
+                animation-name: magic-border;
+                animation-duration: .6s;
+                animation-timing-function: ease-out;
+                right: 0;
+                left: unset;
+            }
+        }
+        &:hover{
+            
+            a{
+                animation-name: green-to-blue;
+                animation-duration: .6s;
+                color: $nav-links;
+                border-color: $nav-links;
+            }
         }
     }
 }
@@ -325,6 +408,7 @@
     position: fixed;
     bottom: 100px;
     right: 30px;
+    transition: .5s;
 
     .container{
         width: 232px;
@@ -349,5 +433,8 @@
             text-align: center;
             box-shadow: 0 0 32px rgba(0,0,0,.16);
         }
+    }
+    &:hover{
+        bottom: 103px;
     }
 }
