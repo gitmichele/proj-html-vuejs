@@ -55,6 +55,7 @@ header{
         height: 80px;
         justify-content: space-between;
         align-items: center;
+        z-index: 99;
 
         .logo-container{
 
@@ -324,5 +325,46 @@ header{
 
     .fancy-link{
         margin-top: 20px;
+    }
+}
+
+
+// FOOTER
+footer{
+    
+    #footer-container{
+        padding: 69px 0px 50px 0px;
+
+        .flex-row{
+            padding-bottom: 50px;
+
+            .col2-half:first-child{
+
+                .footer-text{
+
+                    > div{
+
+                        margin-top: 11px;
+                    }
+                }
+                .social-container{
+                    margin-top: 30px;
+                }
+            }
+
+            .col2-half:last-child{
+                display: flex;
+
+                ul{
+
+                    li{
+                        padding: 11px 50px 0 15px;
+                    }
+                }
+            }
+        }
+        .center-row{
+            margin-top: 22px;
+        }
     }
 }

@@ -14,6 +14,8 @@ $cards-title: #3F3A64;
 $nav-links: #3F3A64;
 $hover-button: #3F3A64;
 $base-color: #333;
+$footer-bg: #171621;
+$footer-text: #ABABAB;
 
 // mixin-text
 @mixin main-title {
@@ -72,4 +74,16 @@ $base-color: #333;
     color: $cards-title;
     font-family: roboto;
     text-transform: capitalize;
+}
+@mixin footer-title{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    font-family: roboto;
+}
+@mixin footer-links {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: $footer-text;
 }
