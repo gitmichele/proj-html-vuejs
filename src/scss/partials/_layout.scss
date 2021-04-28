@@ -39,7 +39,9 @@
 .col3{
     width: calc(100% / 3);
 }
-
+.col4{
+    width: calc(100% / 4);
+}
 
 // HEADER
 // jumbotron
@@ -221,5 +223,106 @@ header{
                 padding-top: 20px;
             }
         }
+    }
+}
+
+// sponsors
+#sponsors-container{
+    margin: 150px 0;
+
+    ul.flex-row{
+        justify-content: space-around;
+    }
+}
+
+// stories
+#stories-container{
+    
+    .col2-half:first-child{
+    
+        .story-container.flex-col{
+
+            padding: 90px 0;
+            width: 530px;
+            margin: auto;
+            align-items: center;
+            font-family: roboto;
+            justify-content: space-between;
+
+            .section-small-title{
+                margin-bottom: 50px;
+            }
+            p{
+                margin-bottom: 32px;
+            }
+            .story-author{
+                align-items: center;
+                padding-top: 21px;
+
+                .img-container{
+                    width: 85px;
+                    height: 85px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-bottom: 21px;
+                    
+                    img{
+                        width: 100%;
+                    }
+                }
+                .job{
+                    margin-top: 11px;
+                }
+            }
+        }
+    }
+
+    .col2-half:last-child{
+        position: relative;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+// blog
+#blog-container{
+    padding: 145px 0 144px 0;
+
+    .section-main-title{
+        margin-bottom: 58px;
+    }
+
+    .cards-container{
+
+        .card-container{
+            
+            figure{
+
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            .card-text{
+
+                padding: 0;
+
+                .card-title{
+                    margin-bottom: 25px;
+                    color: $base-color;
+                }
+
+                .card-details{
+
+                    margin: 25px 0 10px 0;
+                }
+            }
+        }
+    }
+
+    .fancy-link{
+        margin-top: 20px;
     }
 }

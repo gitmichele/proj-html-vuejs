@@ -213,4 +213,81 @@ header{
             }
         }
     }
+
+}
+// sponsors
+#sponsors-container{
+
+    img{
+        filter: brightness( 50% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+        opacity: 0.2;
+    }
+
+} 
+
+// stories
+#stories-container{
+    
+    .col2-half:first-child{
+        background-color: #F6F6FD; 
+        background-image: url(../img/background-pattern-wavify.png);
+
+        .story-container.flex-col{
+
+            .section-small-title{
+
+                h3{
+                    @include section-small-title;
+                    color: $primary-color;
+                }
+            }
+            p{
+                color: #111111;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.7em;
+                text-align: center;
+                font-family: gilroy;
+                letter-spacing: 0;
+            }
+            .story-author{
+
+                .name{
+                    
+                    h3{
+                        @include section-small-title;
+                        color: $base-color;
+                    }
+                }
+                .job{
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+// blog
+#blog-container{
+
+    .section-small-title{
+
+        h3{
+            @include section-small-title;
+            color: $base-color;
+        }
+    }
+    .section-main-title{
+
+        h2{
+            @include section-main-title;
+            color: $base-color;
+
+            span{
+                color: $primary-color;
+            }
+        }
+    }
 }

@@ -146,6 +146,50 @@ body {
   margin-right: 30px;
 }
 
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+.slider-button .slider-button-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.slider-button .slider-button-container .arrow {
+  cursor: pointer;
+  font-size: 18px;
+  color: #b9b9b9;
+}
+.slider-button .slider-button-container .slider-num {
+  font-size: 17px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 1.31px;
+  font-family: roboto;
+  line-height: 20px;
+}
+
+.fancy-link .fancy-link-text a {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 1px;
+  color: #20AD96;
+  border-bottom: 1px solid #20AD96;
+  font-family: roboto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -197,6 +241,10 @@ body {
 
 .col3 {
   width: calc(100% / 3);
+}
+
+.col4 {
+  width: calc(100% / 4);
 }
 
 header nav {
@@ -317,6 +365,76 @@ header #jumbotron .jumbo-img {
 #book-store-container .right-container .card-container .card-text {
   padding-bottom: 0;
   padding-top: 20px;
+}
+
+#sponsors-container {
+  margin: 150px 0;
+}
+#sponsors-container ul.flex-row {
+  justify-content: space-around;
+}
+
+#stories-container .col2-half:first-child .story-container.flex-col {
+  padding: 90px 0;
+  width: 530px;
+  margin: auto;
+  align-items: center;
+  font-family: roboto;
+  justify-content: space-between;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .section-small-title {
+  margin-bottom: 50px;
+}
+#stories-container .col2-half:first-child .story-container.flex-col p {
+  margin-bottom: 32px;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author {
+  align-items: center;
+  padding-top: 21px;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author .img-container {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 21px;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author .img-container img {
+  width: 100%;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author .job {
+  margin-top: 11px;
+}
+#stories-container .col2-half:last-child {
+  position: relative;
+}
+#stories-container .col2-half:last-child img {
+  height: 100%;
+  width: 100%;
+}
+
+#blog-container {
+  padding: 145px 0 144px 0;
+}
+#blog-container .section-main-title {
+  margin-bottom: 58px;
+}
+#blog-container .cards-container .card-container figure {
+  border-radius: 5px;
+  overflow: hidden;
+}
+#blog-container .cards-container .card-container .card-text {
+  padding: 0;
+}
+#blog-container .cards-container .card-container .card-text .card-title {
+  margin-bottom: 25px;
+  color: #333;
+}
+#blog-container .cards-container .card-container .card-text .card-details {
+  margin: 25px 0 10px 0;
+}
+#blog-container .fancy-link {
+  margin-top: 20px;
 }
 
 header {
@@ -471,4 +589,62 @@ header #jumbotron .jumbo-img img {
   color: #7E7E7E;
   font-family: roboto;
   white-space: 0;
+}
+
+#sponsors-container img {
+  filter: brightness(50%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+  opacity: 0.2;
+}
+
+#stories-container .col2-half:first-child {
+  background-color: #F6F6FD;
+  background-image: url(../img/background-pattern-wavify.png);
+}
+#stories-container .col2-half:first-child .story-container.flex-col .section-small-title h3 {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 2px;
+  color: #20AD96;
+}
+#stories-container .col2-half:first-child .story-container.flex-col p {
+  color: #111111;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.7em;
+  text-align: center;
+  font-family: gilroy;
+  letter-spacing: 0;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author .name h3 {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 2px;
+  color: #333;
+}
+#stories-container .col2-half:first-child .story-container.flex-col .story-author .job {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#blog-container .section-small-title h3 {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 2px;
+  color: #333;
+}
+#blog-container .section-main-title h2 {
+  font-family: "Playfair Display", Sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #333;
+}
+#blog-container .section-main-title h2 span {
+  color: #20AD96;
 }
