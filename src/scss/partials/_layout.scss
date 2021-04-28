@@ -209,7 +209,7 @@ header{
         }
         .button-container{
             position: absolute;
-            bottom: 25px;
+            bottom: 35px;
         }
     }
 
@@ -217,11 +217,17 @@ header{
 
         .card-container{
             padding-bottom: 0;
-            padding-top: 0;
 
+            figure{
+                position: relative;
+            }
             .card-text{
                 padding-bottom: 0;
-                padding-top: 20px;
+                padding-top: 25px;
+
+                .highlighted-num{
+                    margin-bottom: 15px;
+                }
             }
         }
     }
@@ -312,7 +318,6 @@ header{
 
                 .card-title{
                     margin-bottom: 25px;
-                    color: $base-color;
                 }
 
                 .card-details{

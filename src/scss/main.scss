@@ -2,6 +2,8 @@
 @import 'partials/base';
 @import 'partials/components';
 @import 'partials/layout';
+@import 'partials/animations';
+
 
 
 // HEADER
@@ -41,6 +43,67 @@ header{
             }
             .button-container{
 
+
+// FOOTER
+footer{
+    background-color: $footer-bg;
+    color: $footer-text;
+
+    .flex-row{
+
+        .footer-title{
+            @include footer-title;
+        }
+
+        .col2-half:first-child{
+
+            .footer-text{
+                @include footer-links;
+
+                a{
+                    text-decoration: none;
+                    color: #ABABAB;
+                }
+            }
+            .social-container{
+
+                i{
+                    color: $footer-text;
+                    font-size: 21px;
+                }
+            }
+        }
+
+        .col2-half:last-child{
+
+            ul{
+                list-style: none;
+
+                li{
+
+                    a{
+                        text-decoration: none;
+                        @include footer-links
+                    }
+                }
+            }
+        }
+    }
+    .center-row{
+
+        span{
+            font-size: 14px;
+            font-family: roboto;
+            font-weight: 400;
+            letter-spacing: 0em;
+            line-height: 1.74;
+        
+            i{
+                font-size: 12px;
+            }
+        }
+    }
+}
                 a{
 
                     &:hover{
@@ -122,8 +185,20 @@ header{
 
     .video-container{
 
-        img{
+        .link-video-container{
+            overflow: hidden;
             border-radius: 5px;
+
+
+            img{
+                transition: transform ease-out 1.5s;
+            }
+        }
+        &:hover{
+                
+            img{
+                transform: scale(1.1);
+            }
         }
     }
 
@@ -160,6 +235,10 @@ header{
                 color: $primary-color;
             }
         }
+    }
+
+    .card-container{
+        @include card-animation-shadow;
     }
 }
 
@@ -213,16 +292,36 @@ header{
             }
         }
     }
+    .card-container{
+        figure{
+            cursor: pointer;
+        }
+        &:hover{
+            .book-utility{
+                display: block
+            };
+        }
+        .card-title{
+            cursor: pointer;
 
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
 }
 // sponsors
 #sponsors-container{
 
-    img{
-        filter: brightness( 50% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
-        opacity: 0.2;
-    }
+    ul{
+        list-style: none;
 
+        img{
+            filter: brightness( 50% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+            opacity: 0.2;
+        }
+
+    }
 } 
 
 // stories
@@ -287,6 +386,22 @@ header{
 
             span{
                 color: $primary-color;
+            }
+        }
+    }
+    .card-container{
+
+        figure{
+            cursor: pointer;
+        }
+
+        .card-title{
+
+            color: $base-color;
+
+            &:hover{
+                color: $primary-color;
+                cursor: pointer;
             }
         }
     }

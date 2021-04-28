@@ -1,0 +1,18 @@
+@mixin card-animation-shadow{
+    transition: ease-out .5s;
+
+    figure, .card-title{
+        cursor: pointer;
+    }
+
+    &:hover{
+        box-shadow: 0 14px 59px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-title{
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+}
