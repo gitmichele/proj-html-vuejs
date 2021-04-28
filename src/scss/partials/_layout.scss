@@ -42,6 +42,11 @@
 .col4{
     width: calc(100% / 4);
 }
+.nav-bg{
+    transition: .5s;
+    background-color: #fff;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+}
 
 // HEADER
 // jumbotron
@@ -49,20 +54,24 @@ header{
 
     nav{
         position: fixed;
-        display: flex;
-        width: 1200px;
-        padding: 0 15px;
-        height: 80px;
-        justify-content: space-between;
-        align-items: center;
+        width: 100%;
         z-index: 99;
 
-        .logo-container{
+        #nav-container{
+            display: flex;
+            width: 1200px;
+            padding: 0 15px;
+            height: 80px;
+            justify-content: space-between;
+            align-items: center;
 
-            width: 158px;
+            .logo-container{
 
-            img{
-                width: 100%;
+                width: 158px;
+
+                img{
+                    width: 100%;
+                }
             }
         }
     }

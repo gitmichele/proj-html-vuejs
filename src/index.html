@@ -11,8 +11,7 @@
     crossorigin="anonymous" />
 
     <!-- VUE-JS -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-clickaway@2.2.2/dist/vue-clickaway.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,151 +28,564 @@
 </head>
 
 <body>
-
-    <!-- HEADER -->
-    <header>
-        <div class="section-container">
-            <nav>
-                <div class="logo-container">
-                    <a href="#">
-                        <img src="img/dark-logo.png" alt="">
-                    </a>
-                </div>
-
-                <div class="navbar-container">
-                    <ul>
-                        <li>
+    <div id="app">
+        <!-- HEADER -->
+        <header>
+            <nav :class="scrollPosition > 100 ? 'nav-bg' : ''">
+                <div class="section-container">
+                    <div id="nav-container">
+                        <div class="logo-container">
                             <a href="#">
-                                <span class="navbar-text">
-                                    Home
-                                </span>
-
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
+                                <img src="img/dark-logo.png" alt="">
                             </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="navbar-text">
-                                    Pages
-                                </span>
+                        </div>
                         
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="navbar-text">
-                                    Courses
-                                </span>
+                        <div class="navbar-container">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Home
+                                        </span>
                         
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="navbar-text">
-                                    Features
-                                </span>
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Pages
+                                        </span>
                         
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="navbar-text">
-                                    Blog
-                                </span>
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Courses
+                                        </span>
                         
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="navbar-text">
-                                    Shop
-                                </span>
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Features
+                                        </span>
                         
-                                <span class="navbar-icon">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Blog
+                                        </span>
+                        
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="navbar-text">
+                                            Shop
+                                        </span>
+                        
+                                        <span class="navbar-icon">
+                                            <i class="fas fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="social-container">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                        
+                                    <div class="cloud-msg">
+                                        <div>Twitter</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                        
+                                    <div class="cloud-msg">
+                                        <div>Facebook</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                        
+                                    <div class="cloud-msg">
+                                        <div>Instagram</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                        
+                                    <div class="cloud-msg">
+                                        <div>Linkedin</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                <div class="social-container">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-
-                            <div class="cloud-msg">
-                                <div>Twitter</div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-
-                            <div class="cloud-msg">
-                                <div>Facebook</div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-
-                            <div class="cloud-msg">
-                                <div>Instagram</div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-
-                            <div class="cloud-msg">
-                                <div>Linkedin</div>
-                            </div>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </nav>
             
-            <section id="jumbotron" class="flex-row">
-                <div class="col2-half jumbo-text">
-                    <div class="title-container">
-                        <h3>
-                            I'm Wingman
-                        </h3>
-                        
-                        <h1>
-                            Peace on earth a wonderfull wish but no way
-                        </h1>
-                        
-                        <p>
-                            Succes isn't overnight. It's when everyday ypu get a little better
-                            than the day before. It all adds up.
-                        </p>
+            <div class="section-container">
+                <section id="jumbotron" class="flex-row">
+                    <div class="col2-half jumbo-text">
+                        <div class="title-container">
+                            <h3>
+                                I'm Wingman
+                            </h3>
+                
+                            <h1>
+                                Peace on earth a wonderfull wish but no way
+                            </h1>
+                
+                            <p>
+                                Succes isn't overnight. It's when everyday ypu get a little better
+                                than the day before. It all adds up.
+                            </p>
+                
+                            <div class="button-container">
+                                <a href="#">
+                                    <div class="button-content">
+                                        <div class="button-text">
+                                            Get started for free
+                                        </div>
+                
+                                        <div class="button-icon">
+                                            <i class="fas fa-long-arrow-alt-right"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2-half jumbo-img">
+                        <img src="img/home-movation-hero-image.png" alt="">
+                    </div>
+                </section>
 
-                        <div class="button-container">
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <!-- dati/prima sezione del main-->
+            <section>
+                <div class="section-container">
+                    <div id="data-container">
+                        <div class="flex-row useless-padding">
+                            <div class="col4">
+                                <div class="number-container">
+                                    <div class="highlighted-num">
+                                        1.926
+                                    </div>
+
+                                    <div>
+                                        Finished sessions
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col4">
+                                <div class="number-container">
+                                    <div class="highlighted-num">
+                                        100%
+                                    </div>
+                                    
+                                    <div>
+                                        Satisfaction rate
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col4">
+                                <div class="number-container">
+                                    <div class="highlighted-num">
+                                        3092+
+                                    </div>
+                                    
+                                    <div>
+                                        Enrolled learners
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col4">
+                                <div class="number-container">
+                                    <div class="highlighted-num">
+                                        200
+                                    </div>
+                                    
+                                    <div>
+                                        Online Instructors
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- about me -->
+            <section>
+                <div class="section-container">
+                    <div id="about-container">
+                        <div class="section-small-title">
+                            <h3>About Me</h3>
+                        </div>
+                        <div class="flex-row useless-padding">
+                            <div class="col2-half">
+                                <div class="section-main-title set-title-w">
+                                    <h2>How to be an Alpha Male: the 15 habits of true alphas</h2>
+                                </div>
+                            </div>
+
+                            <div class="col2-half useless-padding">
+                                <h4>
+                                    Want to learn how to be <span class="highlight">an alpha male</span>? 
+                                    How to be more masculine? How to be the man you’ve always wanted to be?
+                                </h4>
+
+                                <p>
+                                    Your goal is to show the consistency of business, core values, and customer care. 
+                                    Punctuality, responsibility, individuality, accuracy, enthusiasm – you have to 
+                                    clearly explain how these qualities are applicable to your work. And
+                                    the important thing is you do love what you do.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- video+cit -->
+            <section>
+                <div class="section-container">
+                    <div id="video-section">
+                        <div class="flex-row useless-padding">
+                            <div class="video-container col2-big">
+                                <a href="#">
+                                    <div class="link-video-container">
+                                        <img src="img/home-movation-video-poster-670x450.jpg" alt="">
+                                        <img src="img/icon-youtube-play.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="quote-container col2-small">
+                                <div class="flex-col">
+                                    <div class="text-quote-container    ">
+                                        "Every morning you have two choices: continue to sleep with your 
+                                        dreams, or wake up and chase them."
+                                    </div>
+
+                                    <div class="quote-logo">
+                                        <img src="img/home-movation-shape-01.png" alt="">
+                                    </div>
+
+                                    <div class="quote-author">
+                                        Kaixa Stark
+                                    </div>
+
+                                    <div class="quote-wingman">
+                                        Wingman
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- begin your journey -->
+            <section>
+                <div class="section-container">
+                    <div id="journey-container">
+                        <div class="center-row section-small-title">
+                            <h3>Begin your journey at maxcoach</h3>
+                        </div>
+
+                        <div class="center-row section-main-title">
+                            <h2><span>Latest</span><span> Online courses</span></h2>
+                        </div>
+
+                        <div class="cards-container">
+                            <div class="flex-row">
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-06-480x298.jpg" alt="">
+                                        </figure>
+                                
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;30</span><span>.00</span>
+                                            </div>
+                                
+                                            <div class="card-title">
+                                                <h4>How to be succesfull: create a growth mindset for success</h4>
+                                            </div>
+                                
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        3 Lessons
+                                                    </span>
+                                                </span>
+                                
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                                
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-05-480x298.jpg" alt="">
+                                        </figure>
+                                
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;30</span><span>.00</span>
+                                            </div>
+                                
+                                            <div class="card-title">
+                                                <h4>How to build confidence in your abilities</h4>
+                                            </div>
+                                
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        1 Lessons
+                                                    </span>
+                                                </span>
+                                
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                                
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-04-480x298.jpg" alt="">
+                                        </figure>
+                                
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;20</span><span>.00</span>
+                                            </div>
+                                
+                                            <div class="card-title">
+                                                <h4>Productivity machine - focus in a distracted world</h4>
+                                            </div>
+                                
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        5 Lessons
+                                                    </span>
+                                                </span>
+                                
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                                
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-row">
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-03-480x298.jpg" alt="">
+                                        </figure>
+                            
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;20</span><span>.00</span>
+                                            </div>
+                            
+                                            <div class="card-title">
+                                                <h4>Effective time mangagement mastery - complete guide</h4>
+                                            </div>
+                            
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                            
+                                                    <span class="lessons-text">
+                                                        18 Lessons
+                                                    </span>
+                                                </span>
+                            
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                            
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-02-480x298.jpg" alt="">
+                                        </figure>
+                            
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;25</span><span>.99</span>
+                                            </div>
+                            
+                                            <div class="card-title">
+                                                <h4>Body language secrets for entrepreneurs</h4>
+                                            </div>
+                            
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                            
+                                                    <span class="lessons-text">
+                                                        19 Lessons
+                                                    </span>
+                                                </span>
+                            
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                            
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col3">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-course-01-480x298.jpg" alt="">
+                                        </figure>
+                            
+                                        <div class="card-text">
+                                            <div class="cost highlighted-num">
+                                                <span>&#36;19</span><span>.99</span>
+                                            </div>
+                            
+                                            <div class="card-title">
+                                                <h4>Management skills: the science of leadership</h4>
+                                            </div>
+                            
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-file-alt"></i>
+                                                    </span>
+                            
+                                                    <span class="lessons-text">
+                                                        17 Lessons
+                                                    </span>
+                                                </span>
+                            
+                                                <span class="students">
+                                                    <span class="students-icon">
+                                                        <i class="far fa-user"></i>
+                                                    </span>
+                            
+                                                    <span class="students-text">
+                                                        50 Students
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="button-container center-row">
                             <a href="#">
                                 <div class="button-content">
                                     <div class="button-text">
-                                        Get started for free
+                                        View all our courses
                                     </div>
 
                                     <div class="button-icon">
@@ -184,956 +596,550 @@
                         </div>
                     </div>
                 </div>
-                <div class="col2-half jumbo-img">
-                    <img src="img/home-movation-hero-image.png" alt="">
+            </section>
+
+            <!-- book-store -->
+            <section>
+                <div class="section-container">
+                    <div id="book-store-container">
+                        <div class="flex-row">
+                            <div class="col2-small">
+                                <div class="left-container">
+                                    <div class="section-small-title">
+                                        <h3>Book store online</h3>
+                                    </div>
+
+                                    <div class="section-main-title set-title-w">
+                                        <h2>
+                                            <span>Be alpha with</span>
+                                            <span>Wingman's book</span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="list-container">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span><i class="fas fa-check"></i></span>
+                                                    <span>Help you understand yourself better</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span><i class="fas fa-check"></i></span>
+                                                    <span>Revealing mature tips</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span><i class="fas fa-check"></i></span>
+                                                    <span>Give the right advice</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span><i class="fas fa-check"></i></span>
+                                                    <span>Fascinating examples of alpha man</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="button-container">
+                                        <a href="#">
+                                            <div class="button-content">
+                                                <div class="button-text">
+                                                    Get free ebook
+                                                </div>
+                                    
+                                                <div class="button-icon">
+                                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col2-big">
+                                <div class="right-container flex-row">
+                                    <div class="col2-half">
+                                        <div class="card-container flex-col">
+                                            <figure>
+                                                <img src="img/product-book-11-400x400.jpg" alt="">
+                                                <div class="book-utility">
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Quick link</div>
+                                                        </div>
+
+                                                        <div class="book-link">
+                                                            <i class="fas fa-search"></i></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Add to cart</div>
+                                                        </div>
+
+                                                        <div class="book-link">
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Add to wishlist</div>
+                                                        </div>
+                                                        
+                                                        <div class="book-link">
+                                                            <i class="far fa-heart"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Compare</div>
+                                                        </div>
+
+                                                        <div class="book-link">
+                                                            <i class="fas fa-signal"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                    
+                                            <div class="card-text">
+                                                <div class="card-title">
+                                                    <h4>Alpha Man by maxcoach</h4>
+                                                </div>
+
+                                                <div class="cost highlighted-num center-row">
+                                                    <span>&#36;29</span><span>.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col2-half">
+                                        <div class="card-container flex-col">
+                                            <figure>
+                                                <img src="img/product-book-10-400x400.jpg" alt="">
+                                                <div class="book-utility">
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Quick link</div>
+                                                        </div>
+                                                
+                                                        <div class="book-link">
+                                                            <i class="fas fa-search"></i></i>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Add to cart</div>
+                                                        </div>
+                                                
+                                                        <div class="book-link">
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Add to wishlist</div>
+                                                        </div>
+                                                
+                                                        <div class="book-link">
+                                                            <i class="far fa-heart"></i>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="container">
+                                                        <div class="cloud-msg">
+                                                            <div>Compare</div>
+                                                        </div>
+                                                
+                                                        <div class="book-link">
+                                                            <i class="fas fa-signal"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                    
+                                            <div class="card-text">
+                                                <div class="card-title">
+                                                    <h4>Real man 4.0 by maxcoach</h4>
+                                                </div>
+
+                                                <div class="cost highlighted-num center-row">
+                                                    <span>&#36;39</span><span>.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </div>
-    </header>
 
-    <!-- MAIN -->
-    <main>
-        <!-- dati/prima sezione del main-->
-        <section>
-            <div class="section-container">
-                <div id="data-container">
-                    <div class="flex-row useless-padding">
-                        <div class="col4">
-                            <div class="number-container">
-                                <div class="highlighted-num">
-                                    1.926
-                                </div>
-
-                                <div>
-                                    Finished sessions
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col4">
-                            <div class="number-container">
-                                <div class="highlighted-num">
-                                    100%
-                                </div>
-                                
-                                <div>
-                                    Satisfaction rate
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col4">
-                            <div class="number-container">
-                                <div class="highlighted-num">
-                                    3092+
-                                </div>
-                                
-                                <div>
-                                    Enrolled learners
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col4">
-                            <div class="number-container">
-                                <div class="highlighted-num">
-                                    200
-                                </div>
-                                
-                                <div>
-                                    Online Instructors
-                                </div>
-                            </div>
-                        </div>
+            <!-- sponsors -->
+            <section>
+                <div class="section-container">
+                    <div id="sponsors-container">
+                        <ul class="flex-row">
+                            <li>
+                                <img src="img/client-logo-05-primary.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client-logo-06-primary.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client-logo-07-primary.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client-logo-04-primary.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client-logo-03-primary.png" alt="">
+                            </li>
+                            <li>
+                                <img src="img/client-logo-02-primary.png" alt="">
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- about me -->
-        <section>
-            <div class="section-container">
-                <div id="about-container">
-                    <div class="section-small-title">
-                        <h3>About Me</h3>
-                    </div>
-                    <div class="flex-row useless-padding">
-                        <div class="col2-half">
-                            <div class="section-main-title set-title-w">
-                                <h2>How to be an Alpha Male: the 15 habits of true alphas</h2>
-                            </div>
-                        </div>
-
-                        <div class="col2-half useless-padding">
-                            <h4>
-                                Want to learn how to be <span class="highlight">an alpha male</span>? 
-                                How to be more masculine? How to be the man you’ve always wanted to be?
-                            </h4>
-
-                            <p>
-                                Your goal is to show the consistency of business, core values, and customer care. 
-                                Punctuality, responsibility, individuality, accuracy, enthusiasm – you have to 
-                                clearly explain how these qualities are applicable to your work. And
-                                the important thing is you do love what you do.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- video+cit -->
-        <section>
-            <div class="section-container">
-                <div id="video-section">
-                    <div class="flex-row useless-padding">
-                        <div class="video-container col2-big">
-                            <a href="#">
-                                <div class="link-video-container">
-                                    <img src="img/home-movation-video-poster-670x450.jpg" alt="">
-                                    <img src="img/icon-youtube-play.png" alt="">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="quote-container col2-small">
-                            <div class="flex-col">
-                                <div class="text-quote-container    ">
-                                    "Every morning you have two choices: continue to sleep with your 
-                                    dreams, or wake up and chase them."
-                                </div>
-
-                                <div class="quote-logo">
-                                    <img src="img/home-movation-shape-01.png" alt="">
-                                </div>
-
-                                <div class="quote-author">
-                                    Kaixa Stark
-                                </div>
-
-                                <div class="quote-wingman">
-                                    Wingman
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- begin your journey -->
-        <section>
-            <div class="section-container">
-                <div id="journey-container">
-                    <div class="center-row section-small-title">
-                        <h3>Begin your journey at maxcoach</h3>
-                    </div>
-
-                    <div class="center-row section-main-title">
-                        <h2><span>Latest</span><span> Online courses</span></h2>
-                    </div>
-
-                    <div class="cards-container">
-                        <div class="flex-row">
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-06-480x298.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;30</span><span>.00</span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>How to be succesfull: create a growth mindset for success</h4>
-                                        </div>
-                            
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    3 Lessons
-                                                </span>
-                                            </span>
-                            
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                            
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-05-480x298.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;30</span><span>.00</span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>How to build confidence in your abilities</h4>
-                                        </div>
-                            
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    1 Lessons
-                                                </span>
-                                            </span>
-                            
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                            
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-04-480x298.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;20</span><span>.00</span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>Productivity machine - focus in a distracted world</h4>
-                                        </div>
-                            
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    5 Lessons
-                                                </span>
-                                            </span>
-                            
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                            
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex-row">
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-03-480x298.jpg" alt="">
-                                    </figure>
-                        
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;20</span><span>.00</span>
-                                        </div>
-                        
-                                        <div class="card-title">
-                                            <h4>Effective time mangagement mastery - complete guide</h4>
-                                        </div>
-                        
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                        
-                                                <span class="lessons-text">
-                                                    18 Lessons
-                                                </span>
-                                            </span>
-                        
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                        
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-02-480x298.jpg" alt="">
-                                    </figure>
-                        
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;25</span><span>.99</span>
-                                        </div>
-                        
-                                        <div class="card-title">
-                                            <h4>Body language secrets for entrepreneurs</h4>
-                                        </div>
-                        
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                        
-                                                <span class="lessons-text">
-                                                    19 Lessons
-                                                </span>
-                                            </span>
-                        
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                        
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col3">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-course-01-480x298.jpg" alt="">
-                                    </figure>
-                        
-                                    <div class="card-text">
-                                        <div class="cost highlighted-num">
-                                            <span>&#36;19</span><span>.99</span>
-                                        </div>
-                        
-                                        <div class="card-title">
-                                            <h4>Management skills: the science of leadership</h4>
-                                        </div>
-                        
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-file-alt"></i>
-                                                </span>
-                        
-                                                <span class="lessons-text">
-                                                    17 Lessons
-                                                </span>
-                                            </span>
-                        
-                                            <span class="students">
-                                                <span class="students-icon">
-                                                    <i class="far fa-user"></i>
-                                                </span>
-                        
-                                                <span class="students-text">
-                                                    50 Students
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="button-container center-row">
-                        <a href="#">
-                            <div class="button-content">
-                                <div class="button-text">
-                                    View all our courses
-                                </div>
-
-                                <div class="button-icon">
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- book-store -->
-        <section>
-            <div class="section-container">
-                <div id="book-store-container">
+            <!-- real stories -->
+            <section>
+                <div id="stories-container">
                     <div class="flex-row">
-                        <div class="col2-small">
-                            <div class="left-container">
+                        <div class="col2-half">
+                            <div class="story-container flex-col">
                                 <div class="section-small-title">
-                                    <h3>Book store online</h3>
-                                </div>
-
-                                <div class="section-main-title set-title-w">
-                                    <h2>
-                                        <span>Be alpha with</span>
-                                        <span>Wingman's book</span>
-                                    </h2>
-                                </div>
-
-                                <div class="list-container">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="fas fa-check"></i></span>
-                                                <span>Help you understand yourself better</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="fas fa-check"></i></span>
-                                                <span>Revealing mature tips</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="fas fa-check"></i></span>
-                                                <span>Give the right advice</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="fas fa-check"></i></span>
-                                                <span>Fascinating examples of alpha man</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="button-container">
-                                    <a href="#">
-                                        <div class="button-content">
-                                            <div class="button-text">
-                                                Get free ebook
-                                            </div>
-                                
-                                            <div class="button-icon">
-                                                <i class="fas fa-long-arrow-alt-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    <h3>Real stories</h3>
                                 </div>
                                 
+                                <p>
+                                    I am free to learn at my own pace, follow my own schedule and choose
+                                    the subject I want to learn from the syllabus. Great study
+                                    portal for people like me.
+                                </p>
+                                
+                                <div class="story-author flex-col">
+                                    <div class="img-container">
+                                        <img src="img/testimonial-avata-02.jpg" alt="">
+                                    </div>
+                                
+                                    <div class="name">
+                                        <h3>Mina Hollance</h3>
+                                    </div>
+                                
+                                    <div class="job">
+                                        /Freelancer
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col2-big">
-                            <div class="right-container flex-row">
-                                <div class="col2-half">
+                        <div class="col2-half">
+                            <img src="img/home-movation-testimonial-image-768x562.jpg" alt="">
+
+                            <div class="slider-button">
+                                <div class="slider-button-container">
+                                    <div class="arrow up">
+                                        <i class="fas fa-caret-up"></i>
+                                    </div>
+                                    
+                                    <div class="slider-num">
+                                        1/4
+                                    </div>
+                                    
+                                    <div class="arrow down">
+                                        <i class="fas fa-caret-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- blog -->
+            <section>
+                <div class="section-container">
+                    <div id="blog-container">
+                        <div class="section-small-title useless-padding">
+                            <h3>Blog updated</h3>
+                        </div>
+
+                        <div class="section-main-title useless-padding">
+                            <h2>Interesting <span>articles updated</span> daily</h2>
+                        </div>
+
+                        <div class="cards-container">
+                            <div class="flex-row">
+                                <div class="col4">
                                     <div class="card-container flex-col">
                                         <figure>
-                                            <img src="img/product-book-11-400x400.jpg" alt="">
-                                            <div class="book-utility">
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Quick link</div>
-                                                    </div>
-
-                                                    <div class="book-link">
-                                                        <i class="fas fa-search"></i></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Add to cart</div>
-                                                    </div>
-
-                                                    <div class="book-link">
-                                                        <i class="fas fa-shopping-cart"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Add to wishlist</div>
-                                                    </div>
-                                                    
-                                                    <div class="book-link">
-                                                        <i class="far fa-heart"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Compare</div>
-                                                    </div>
-
-                                                    <div class="book-link">
-                                                        <i class="fas fa-signal"></i>
-                                                    </div>
-                                                </div>
+                                            <img src="img/motivation-blog-04-480x325.jpg" alt="">
+                                        </figure>
+                        
+                                        <div class="card-text">
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-calendar"></i>
+                                                    </span>
+                        
+                                                    <span class="lessons-text">
+                                                        May 13, 2020
+                                                    </span>
+                                                </span>
                                             </div>
+                        
+                                            <div class="card-title">
+                                                <h4>How to stay true to your personal brand</h4>
+                                            </div>
+                        
+                                            <p>When it comes to your business or career, you want...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col4">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-blog-03-480x325.jpg" alt="">
                                         </figure>
                                 
                                         <div class="card-text">
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-calendar"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        May 13, 2020
+                                                    </span>
+                                                </span>
+                                            </div>
+                                
                                             <div class="card-title">
-                                                <h4>Alpha Man by maxcoach</h4>
+                                                <h4>5 vital lessons in 5 years of freelancing</h4>
                                             </div>
-
-                                            <div class="cost highlighted-num center-row">
-                                                <span>&#36;29</span><span>.00</span>
-                                            </div>
+                                
+                                            <p>Being self-employed and working from home, it’s easy to get...</p>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="col2-half">
+
+                                <div class="col4">
                                     <div class="card-container flex-col">
                                         <figure>
-                                            <img src="img/product-book-10-400x400.jpg" alt="">
-                                            <div class="book-utility">
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Quick link</div>
-                                                    </div>
-                                            
-                                                    <div class="book-link">
-                                                        <i class="fas fa-search"></i></i>
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Add to cart</div>
-                                                    </div>
-                                            
-                                                    <div class="book-link">
-                                                        <i class="fas fa-shopping-cart"></i>
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Add to wishlist</div>
-                                                    </div>
-                                            
-                                                    <div class="book-link">
-                                                        <i class="far fa-heart"></i>
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="container">
-                                                    <div class="cloud-msg">
-                                                        <div>Compare</div>
-                                                    </div>
-                                            
-                                                    <div class="book-link">
-                                                        <i class="fas fa-signal"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <img src="img/motivation-blog-02-480x325.jpg" alt="">
                                         </figure>
                                 
                                         <div class="card-text">
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-calendar"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        May 13, 2020
+                                                    </span>
+                                                </span>
+                                            </div>
+                                
                                             <div class="card-title">
-                                                <h4>Real man 4.0 by maxcoach</h4>
+                                                <h4>11 Super Useful Tips for Small-Business Owners</h4>
                                             </div>
-
-                                            <div class="cost highlighted-num center-row">
-                                                <span>&#36;39</span><span>.00</span>
-                                            </div>
+                                
+                                            <p>Being a small-business owner poses a ton of challenges. We...</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- sponsors -->
-        <section>
-            <div class="section-container">
-                <div id="sponsors-container">
-                    <ul class="flex-row">
-                        <li>
-                            <img src="img/client-logo-05-primary.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/client-logo-06-primary.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/client-logo-07-primary.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/client-logo-04-primary.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/client-logo-03-primary.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/client-logo-02-primary.png" alt="">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- real stories -->
-        <section>
-            <div id="stories-container">
-                <div class="flex-row">
-                    <div class="col2-half">
-                        <div class="story-container flex-col">
-                            <div class="section-small-title">
-                                <h3>Real stories</h3>
-                            </div>
-                            
-                            <p>
-                                I am free to learn at my own pace, follow my own schedule and choose
-                                the subject I want to learn from the syllabus. Great study
-                                portal for people like me.
-                            </p>
-                            
-                            <div class="story-author flex-col">
-                                <div class="img-container">
-                                    <img src="img/testimonial-avata-02.jpg" alt="">
-                                </div>
-                            
-                                <div class="name">
-                                    <h3>Mina Hollance</h3>
-                                </div>
-                            
-                                <div class="job">
-                                    /Freelancer
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col2-half">
-                        <img src="img/home-movation-testimonial-image-768x562.jpg" alt="">
-
-                        <div class="slider-button">
-                            <div class="slider-button-container">
-                                <div class="arrow up">
-                                    <i class="fas fa-caret-up"></i>
                                 </div>
                                 
-                                <div class="slider-num">
-                                    1/4
-                                </div>
+                                <div class="col4">
+                                    <div class="card-container flex-col">
+                                        <figure>
+                                            <img src="img/motivation-blog-01-480x325.jpg" alt="">
+                                        </figure>
                                 
-                                <div class="arrow down">
-                                    <i class="fas fa-caret-down"></i>
+                                        <div class="card-text">
+                                            <div class="card-details">
+                                                <span class="lessons">
+                                                    <span class="lessons-icon">
+                                                        <i class="far fa-calendar"></i>
+                                                    </span>
+                                
+                                                    <span class="lessons-text">
+                                                        May 13, 2020
+                                                    </span>
+                                                </span>
+                                            </div>
+                                
+                                            <div class="card-title">
+                                                <h4>11 Super Useful Tips for Small-Business Owners</h4>
+                                            </div>
+                                
+                                            <p>Forgive yourself for bad habits you may have started or...</p>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="center-row">
+                            <div class="fancy-link">
+                                <span class="fancy-link-text">
+                                    <a href="#">View all posts</a>
+                                    <div class="hidden-box"></div>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- blog -->
-        <section>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
             <div class="section-container">
-                <div id="blog-container">
-                    <div class="section-small-title useless-padding">
-                        <h3>Blog updated</h3>
-                    </div>
-
-                    <div class="section-main-title useless-padding">
-                        <h2>Interesting <span>articles updated</span> daily</h2>
-                    </div>
-
-                    <div class="cards-container">
-                        <div class="flex-row">
-                            <div class="col4">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-blog-04-480x325.jpg" alt="">
-                                    </figure>
+                <div id="footer-container">
+                    <div class="flex-row">
+                        <div class="col2-half useless-padding">
+                            <div class="footer-title">
+                                <span>Address</span>
+                            </div>
                     
-                                    <div class="card-text">
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-calendar"></i>
-                                                </span>
+                            <div class="footer-text">
+                                <div>
+                                    382 NE 191st St # 87394 Miami, FL 33179-3899
+                                </div>
                     
-                                                <span class="lessons-text">
-                                                    May 13, 2020
-                                                </span>
-                                            </span>
-                                        </div>
+                                <div>
+                                    +1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)
+                                </div>
                     
-                                        <div class="card-title">
-                                            <h4>How to stay true to your personal brand</h4>
-                                        </div>
-                    
-                                        <p>When it comes to your business or career, you want...</p>
-                                    </div>
+                                <div>
+                                    <a href="#">support@maxcoach.com</a>
                                 </div>
                             </div>
-
-                            <div class="col4">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-blog-03-480x325.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-calendar"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    May 13, 2020
-                                                </span>
-                                            </span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>5 vital lessons in 5 years of freelancing</h4>
-                                        </div>
-                            
-                                        <p>Being self-employed and working from home, it’s easy to get...</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col4">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-blog-02-480x325.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-calendar"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    May 13, 2020
-                                                </span>
-                                            </span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>11 Super Useful Tips for Small-Business Owners</h4>
-                                        </div>
-                            
-                                        <p>Being a small-business owner poses a ton of challenges. We...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col4">
-                                <div class="card-container flex-col">
-                                    <figure>
-                                        <img src="img/motivation-blog-01-480x325.jpg" alt="">
-                                    </figure>
-                            
-                                    <div class="card-text">
-                                        <div class="card-details">
-                                            <span class="lessons">
-                                                <span class="lessons-icon">
-                                                    <i class="far fa-calendar"></i>
-                                                </span>
-                            
-                                                <span class="lessons-text">
-                                                    May 13, 2020
-                                                </span>
-                                            </span>
-                                        </div>
-                            
-                                        <div class="card-title">
-                                            <h4>11 Super Useful Tips for Small-Business Owners</h4>
-                                        </div>
-                            
-                                        <p>Forgive yourself for bad habits you may have started or...</p>
-                                    </div>
-                                </div>
+                    
+                            <div class="social-container">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="center-row">
-                        <div class="fancy-link">
-                            <span class="fancy-link-text">
-                                <a href="#">View all posts</a>
-                                <div class="hidden-box"></div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="section-container">
-            <div id="footer-container">
-                <div class="flex-row">
-                    <div class="col2-half useless-padding">
-                        <div class="footer-title">
-                            <span>Address</span>
-                        </div>
-                
-                        <div class="footer-text">
-                            <div>
-                                382 NE 191st St # 87394 Miami, FL 33179-3899
-                            </div>
-                
-                            <div>
-                                +1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)
-                            </div>
-                
-                            <div>
-                                <a href="#">support@maxcoach.com</a>
-                            </div>
-                        </div>
-                
-                        <div class="social-container">
+                    
+                        <div class="col2-half useless-padding">
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
+                                    <div class="footer-title">
+                                        <span>Explore</span>
+                                    </div>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
+                                    <a href="#">Start Here</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
+                                    <a href="#">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
+                                    <a href="#">About us</a>
+                                </li>
+                            </ul>
+                    
+                            <ul>
+                                <li>
+                                    <div class="footer-title">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Succes story</a>
+                                </li>
+                                <li>
+                                    <a href="#">Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact us</a>
+                                </li>
+                            </ul>
+                    
+                            <ul>
+                                <li>
+                                    <div class="footer-title">
+                                        <span>Information</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Membership</a>
+                                </li>
+                                <li>
+                                    <a href="#">Purchease guide</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms of service</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                
-                    <div class="col2-half useless-padding">
-                        <ul>
-                            <li>
-                                <div class="footer-title">
-                                    <span>Explore</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">Start Here</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#">About us</a>
-                            </li>
-                        </ul>
-                
-                        <ul>
-                            <li>
-                                <div class="footer-title">
-                                    <span>&nbsp;</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">Succes story</a>
-                            </li>
-                            <li>
-                                <a href="#">Courses</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact us</a>
-                            </li>
-                        </ul>
-                
-                        <ul>
-                            <li>
-                                <div class="footer-title">
-                                    <span>Information</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">Membership</a>
-                            </li>
-                            <li>
-                                <a href="#">Purchease guide</a>
-                            </li>
-                            <li>
-                                <a href="#">Privacy policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Terms of service</a>
-                            </li>
-                        </ul>
+
+                    <div class="center-row">
+                        <span><i class="far fa-copyright"></i></span> <span>2020 Maxcoach. All Rights Reserved</span>
                     </div>
                 </div>
-
-                <div class="center-row">
-                    <span><i class="far fa-copyright"></i></span> <span>2020 Maxcoach. All Rights Reserved</span>
-                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <div class="purchease-button">
-        <div class="container">
-            <a href="#">
-                <img src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/btn-purchase.jpg"
-                    alt="">
-            </a>
-            
-            <div class="arrow-container">
+        <div class="purchease-button">
+            <div class="container">
                 <a href="#">
-                    <i class="fas fa-external-link-alt"></i>
+                    <img src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/btn-purchase.jpg"
+                        alt="">
                 </a>
+                
+                <div class="arrow-container">
+                    <a href="#">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
