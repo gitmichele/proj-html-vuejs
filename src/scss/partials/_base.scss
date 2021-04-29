@@ -18,6 +18,11 @@ $footer-bg: #171621;
 $footer-text: #ABABAB;
 
 // mixin-text
+@mixin dropdown-links {
+    font-size: 14px;
+    font-family: roboto;
+    color: $light-p;
+}
 @mixin main-title {
     font-family: 'Playfair Display', serif;
     font-size: 56px;

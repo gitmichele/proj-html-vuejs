@@ -45,26 +45,52 @@
                                 <li>
                                     <a href="#">
                                         <span class="navbar-text">
-                                            Home
+                                            {{ navHomeDropdown.linkName }}
                                         </span>
                         
                                         <span class="navbar-icon">
                                             <i class="fas fa-angle-down"></i>
                                         </span>
                                     </a>
+                                    
+                                    <div class="home dropdown flex-row">
+                                        <ul>
+                                            <li v-for="dropLink in navHomeDropdown.dropdown.col1">
+                                                <a href="#"> {{ dropLink }} </a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li v-for="dropLink in navHomeDropdown.dropdown.col2">
+                                                <a href="#">{{ dropLink }}</a>
+                                            </li>
+                                        </ul>
+
+                                        <figure>
+                                            <img :src="`img/${navHomeDropdown.dropdown.img}`" alt="">
+                                        </figure>
+                                    </div>
                                 </li>
-                                <li>
+                                <li v-for="link in navLinksDropdown">
                                     <a href="#">
                                         <span class="navbar-text">
-                                            Pages
+                                            {{ link.linkName }}
                                         </span>
                         
                                         <span class="navbar-icon">
                                             <i class="fas fa-angle-down"></i>
                                         </span>
                                     </a>
+
+                                    <div class="links dropdown">
+                                        <ul>
+                                            <li v-for="dropLink in link.dropdown">
+                                                <a href="#"> {{ dropLink }} </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">
                                         <span class="navbar-text">
                                             Courses
@@ -107,7 +133,7 @@
                                             <i class="fas fa-angle-down"></i>
                                         </span>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         

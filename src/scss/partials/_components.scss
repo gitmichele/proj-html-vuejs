@@ -35,7 +35,7 @@
 // header-navbar
 .navbar-container{
 
-    ul{
+    &>ul{
         list-style: none;
 
         li{
@@ -43,6 +43,7 @@
 
             a{
                 @include nav-links-text;
+                transition: .8s;
 
                 .navbar-icon{
                     margin-left: 5px;
@@ -62,19 +63,74 @@
                     left: 0;
                     border-color: $primary-color;
                 }
-                &:hover{
+            }
+            &:hover{
 
+                a{
                     color: $primary-color;
-
+                
                     span:first-child:after{
 
                         width: 115%;
                     }
                 }
             }
+            &:hover{
+
+                .dropdown{
+                    animation-name: dropdown-animation;
+                    animation-duration: .4s;
+                    animation-timing-function: ease-out;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
     }
 }
+
+// dropdown-container
+@mixin dropdown-container{
+    background-color: white;
+    position: absolute;
+    top: 97%;
+    box-shadow: 0 0 32px rgba(0,0,0,.16);
+    border-bottom: 3px solid $primary-color;
+    visibility:hidden;
+    opacity: 0;
+    padding: 30px;
+    justify-content: space-between;
+
+    ul{
+        li{
+            display: block;
+            margin: 10px 0;
+            
+            a{
+                @include dropdown-links;
+                padding: 0 15px;
+                transition: 0s;
+
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+// navbar homme link dropdown
+.home.dropdown{
+    @include dropdown-container;
+    width: 1180px;
+    left: 18.5%;
+}
+.links.dropdown{
+    @include dropdown-container;
+    padding-right: 100px;
+}
+
+// navbar other-links drobdown
 
 // social navbar
 .social-container{
@@ -438,3 +494,4 @@
         bottom: 103px;
     }
 }
+
