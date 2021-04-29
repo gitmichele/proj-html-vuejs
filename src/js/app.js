@@ -122,17 +122,6 @@ const storiesData = [
 
 function initVue() {
 
-    Vue.directive('scroll', {
-        inserted: function (el, binding) {
-            let f = function (evt) {
-                if (binding.value(evt, el)) {
-                    window.removeEventListener('scroll', f)
-                }
-            }
-            window.addEventListener('scroll', f)
-        }
-    })
-
     new Vue({
 
         el: "#app",
@@ -164,20 +153,6 @@ function initVue() {
             window.addEventListener('scroll', this.getScrollPosition);
             // detect the mouse movement
             window.addEventListener('mousemove', this.getMousePosition);
-            window.addEventListener('load', function () {
-                //get the element
-                var elem = document.getElementById('data-container');
-                //get the distance scrolled on body (by default can be changed)
-                var distanceScrolled = document.body.scrollTop;
-                //create viewport offset object
-                var elemRect = elem.getBoundingClientRect();
-                //get the offset from the element to the viewport
-                var elemViewportOffset = elemRect.top;
-                //add them together
-                var totalOffset = distanceScrolled + elemViewportOffset;
-                //log it, (look at the top of this example snippet)
-                this.scrollVal= totalOffset
-            });
         },
         methods: {
 
@@ -239,17 +214,28 @@ function initVue() {
                     this.storyIndex = 3;
                 }
             },
-            handleScroll: function (evt, el) {
-                if (window.scrollY > this.scrollVal) {
-                    el.setAttribute(
-                        'style',
-                        'opacity: 1; transform: translate3d(0, -10px, 0)'
-                    )
+        },
+        directives: {
+            infocus: {
+                isLiteral: true,
+                inserted: (el, binding, vnode) => {
+                    let f = () => {
+                        let rect = el.getBoundingClientRect()
+                        let inView = (
+                            rect.width > 0 &&
+                            rect.height > 0 &&
+                            rect.top >= 0 &&
+                            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                        )
+                        if (inView) {
+                            el.classList.add(binding.value)
+                            window.removeEventListener('scroll', f)
+                        }
+                    }
+                    window.addEventListener('scroll', f)
+                    f()
                 }
-            },
-            handleCharge: function() {
-
-            },
+            }
         }
     });
 };

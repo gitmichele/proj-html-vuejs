@@ -554,6 +554,16 @@ body {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
+.hidden {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 0.5s ease-out;
+}
+
 header nav {
   position: fixed;
   width: 100%;
@@ -1008,10 +1018,6 @@ header #jumbotron .jumbo-img img {
   max-width: 100%;
 }
 
-#data-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #data-container div:last-child {
   font-size: 15px;
   font-weight: 500;
@@ -1021,10 +1027,6 @@ header #jumbotron .jumbo-img img {
   color: #333;
 }
 
-#about-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #about-container .section-small-title h3 {
   font-size: 15px;
   font-weight: 500;
@@ -1059,10 +1061,6 @@ header #jumbotron .jumbo-img img {
   color: #7E7E7E;
 }
 
-#video-section {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #video-section .video-container .link-video-container {
   overflow: hidden;
   border-radius: 5px;
@@ -1082,10 +1080,6 @@ header #jumbotron .jumbo-img img {
   color: #333;
 }
 
-#journey-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #journey-container .section-small-title h3 {
   font-size: 15px;
   font-weight: 500;
@@ -1120,10 +1114,6 @@ header #jumbotron .jumbo-img img {
   color: #20AD96;
 }
 
-#book-store-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #book-store-container .section-small-title h3 {
   font-size: 15px;
   font-weight: 500;
@@ -1175,10 +1165,6 @@ header #jumbotron .jumbo-img img {
   color: #20AD96;
 }
 
-#sponsors-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #sponsors-container ul {
   list-style: none;
 }
@@ -1193,10 +1179,6 @@ header #jumbotron .jumbo-img img {
   opacity: 1;
 }
 
-#stories-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #stories-container .col2-half:first-child {
   background-color: #F6F6FD;
   background-image: url(../img/background-pattern-wavify.png);
@@ -1231,10 +1213,6 @@ header #jumbotron .jumbo-img img {
   font-size: 14px;
 }
 
-#blog-container {
-  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
-  opacity: 0;
-}
 #blog-container .section-small-title h3 {
   font-size: 15px;
   font-weight: 500;
