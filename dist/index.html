@@ -605,7 +605,7 @@
                                         <h3>Book store online</h3>
                                     </div>
 
-                                    <div class="section-main-title set-title-w hidde" v-infocus="'show'">
+                                    <div class="section-main-title set-title-w hidden" v-infocus="'show'">
                                         <h2>
                                             <span>Be alpha with</span>
                                             <span>Wingman's book</span>
@@ -842,20 +842,20 @@
                         </div>
 
                         <div class="col2-half">
-                            <img class="hidden" v-infocus="'show'" src="img/home-movation-testimonial-image-768x562.jpg" alt="">
+                            <img src="img/home-movation-testimonial-image-768x562.jpg" alt="">
 
                             <div class="slider-button">
                                 <div class="slider-button-container">
                                     <div class="arrow up" @click="changeStoryUp">
-                                        <i class="fas fa-caret-up"></i>
+                                        <i class="fas fa-caret-up hidden" v-infocus="'show'"></i>
                                     </div>
                                     
-                                    <div class="slider-num">
+                                    <div class="slider-num hidden" v-infocus="'show'">
                                         {{ storyIndex + 1 }}/4
                                     </div>
                                     
                                     <div class="arrow down" @click="changeStoryDown">
-                                        <i class="fas fa-caret-down"></i>
+                                        <i class="fas fa-caret-down hidden" v-infocus="'show'"></i>
                                     </div>
                                 </div>
                             </div>
