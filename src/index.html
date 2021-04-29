@@ -154,7 +154,7 @@
             
             <div class="section-container">
                 <section id="jumbotron" class="flex-row">
-                    <div class="col2-half jumbo-text">
+                    <div class="col2-half jumbo-text hidden" v-infocus="'show'">
                         <div class="title-container">
                             <h3>
                                 I'm Wingman
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col2-half jumbo-img" :style="{'background-position-x': movementX + 'px', 'background-position-y': movementY + 'px'}">
+                    <div class="col2-half jumbo-img hidden" v-infocus="'show'" :style="{'background-position-x': movementX + 'px', 'background-position-y': movementY + 'px'}">
                         <img src="img/home-movation-hero-image.png" alt="">
                     </div>
                 </section>
@@ -255,11 +255,11 @@
             <!-- about me -->
             <section>
                 <div class="section-container">
-                    <div id="about-container" class="hidden" v-infocus="'show'">
-                        <div class="section-small-title">
+                    <div id="about-container">
+                        <div class="section-small-title hidden" v-infocus="'show'">
                             <h3>About Me</h3>
                         </div>
-                        <div class="flex-row useless-padding">
+                        <div class="flex-row useless-padding hidden" v-infocus="'show'">
                             <div class="col2-half">
                                 <div class="section-main-title set-title-w">
                                     <h2>How to be an Alpha Male: the 15 habits of true alphas</h2>
@@ -327,16 +327,16 @@
             <section>
                 <div class="section-container">
                     <div id="journey-container">
-                        <div class="center-row section-small-title">
+                        <div class="center-row section-small-title hidden" v-infocus="'show'" >
                             <h3>Begin your journey at maxcoach</h3>
                         </div>
 
-                        <div class="center-row section-main-title">
+                        <div class="center-row section-main-title hidden" v-infocus="'show'">
                             <h2><span>Latest</span><span> Online courses</span></h2>
                         </div>
 
                         <div class="cards-container">
-                            <div class="flex-row">
+                            <div class="flex-row hidden" v-infocus="'show'">
                                 <div class="col3">
                                     <div class="card-container flex-col">
                                         <figure>
@@ -456,7 +456,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex-row">
+                            <div class="flex-row hidden" v-infocus="'show'">
                                 <div class="col3">
                                     <div class="card-container flex-col">
                                         <figure>
@@ -577,7 +577,7 @@
                             </div>
                         </div>
                         
-                        <div class="button-container center-row">
+                        <div class="button-container center-row hidden" v-infocus="'show'">
                             <a href="#">
                                 <div class="button-content">
                                     <div class="button-text">
@@ -597,22 +597,22 @@
             <!-- book-store -->
             <section>
                 <div class="section-container">
-                    <div id="book-store-container" class="hidden" v-infocus="'show'">
+                    <div id="book-store-container">
                         <div class="flex-row">
                             <div class="col2-small">
                                 <div class="left-container">
-                                    <div class="section-small-title">
+                                    <div class="section-small-title hidden" v-infocus="'show'">
                                         <h3>Book store online</h3>
                                     </div>
 
-                                    <div class="section-main-title set-title-w">
+                                    <div class="section-main-title set-title-w hidde" v-infocus="'show'">
                                         <h2>
                                             <span>Be alpha with</span>
                                             <span>Wingman's book</span>
                                         </h2>
                                     </div>
 
-                                    <div class="list-container">
+                                    <div class="list-container hidden" v-infocus="'show'">
                                         <ul>
                                             <li>
                                                 <a href="#">
@@ -640,14 +640,14 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="button-container">
+                                    <div class="button-container hidden" v-infocus="'show'">
                                         <a href="#">
                                             <div class="button-content">
                                                 <div class="button-text">
                                                     Get free ebook
                                                 </div>
                                     
-                                                <div class="button-icon">
+                                                <div class="button-icon hidden" v-infocus="'show'">
                                                     <i class="fas fa-long-arrow-alt-right"></i>
                                                 </div>
                                             </div>
@@ -661,7 +661,7 @@
                                 <div class="right-container flex-row">
                                     <div class="col2-half">
                                         <div class="card-container flex-col">
-                                            <figure>
+                                            <figure class="hidden" v-infocus="'show'">
                                                 <img src="img/product-book-11-400x400.jpg" alt="">
                                                 <div class="book-utility">
                                                     <div class="container">
@@ -706,12 +706,12 @@
                                                 </div>
                                             </figure>
                                     
-                                            <div class="card-text">
+                                            <div class="card-text hidden" v-infocus="'show'">
                                                 <div class="card-title">
                                                     <h4>Alpha Man by maxcoach</h4>
                                                 </div>
 
-                                                <div class="cost highlighted-num center-row">
+                                                <div class="cost highlighted-num center-row hidden" v-infocus="'show'">
                                                     <span>&#36;29</span><span>.00</span>
                                                 </div>
                                             </div>
@@ -720,7 +720,7 @@
                                     
                                     <div class="col2-half">
                                         <div class="card-container flex-col">
-                                            <figure>
+                                            <figure class="hidden" v-infocus="'show'">
                                                 <img src="img/product-book-10-400x400.jpg" alt="">
                                                 <div class="book-utility">
                                                     <div class="container">
@@ -765,12 +765,12 @@
                                                 </div>
                                             </figure>
                                     
-                                            <div class="card-text">
+                                            <div class="card-text hidden" v-infocus="'show'">
                                                 <div class="card-title">
                                                     <h4>Real man 4.0 by maxcoach</h4>
                                                 </div>
 
-                                                <div class="cost highlighted-num center-row">
+                                                <div class="cost highlighted-num center-row hidden" v-infocus="'show'">
                                                     <span>&#36;39</span><span>.00</span>
                                                 </div>
                                             </div>
@@ -813,19 +813,19 @@
 
             <!-- real stories -->
             <section>
-                <div id="stories-container" class="hidden" v-infocus="'show'">
+                <div id="stories-container">
                     <div class="flex-row">
                         <div class="col2-half">
                             <div class="story-container flex-col">
-                                <div class="section-small-title">
+                                <div class="section-small-title hidden" v-infocus="'show'">
                                     <h3>Real stories</h3>
                                 </div>
                                 
-                                <p>
+                                <p class="hidden" v-infocus="'show'">
                                     {{ stories[storyIndex].quote }}
                                 </p>
                                 
-                                <div class="story-author flex-col">
+                                <div class="story-author flex-col hidden" v-infocus="'show'">
                                     <div class="img-container">
                                         <img :src="`img/${stories[storyIndex].img}`" alt="">
                                     </div>
@@ -842,7 +842,7 @@
                         </div>
 
                         <div class="col2-half">
-                            <img src="img/home-movation-testimonial-image-768x562.jpg" alt="">
+                            <img class="hidden" v-infocus="'show'" src="img/home-movation-testimonial-image-768x562.jpg" alt="">
 
                             <div class="slider-button">
                                 <div class="slider-button-container">
@@ -867,12 +867,12 @@
             <!-- blog -->
             <section>
                 <div class="section-container">
-                    <div id="blog-container" class="hidden" v-infocus="'show'">
-                        <div class="section-small-title useless-padding">
+                    <div id="blog-container">
+                        <div class="section-small-title useless-padding hidden" v-infocus="'show'">
                             <h3>Blog updated</h3>
                         </div>
 
-                        <div class="section-main-title useless-padding">
+                        <div class="section-main-title useless-padding hidden" v-infocus="'show'">
                             <h2>Interesting <span>articles updated</span> daily</h2>
                         </div>
 
@@ -880,11 +880,11 @@
                             <div class="flex-row">
                                 <div class="col4">
                                     <div class="card-container flex-col">
-                                        <figure>
+                                        <figure class="hidden" v-infocus="'show'">
                                             <img src="img/motivation-blog-04-480x325.jpg" alt="">
                                         </figure>
                         
-                                        <div class="card-text">
+                                        <div class="card-text hidden" v-infocus="'show'">
                                             <div class="card-details">
                                                 <span class="lessons">
                                                     <span class="lessons-icon">
@@ -908,11 +908,11 @@
 
                                 <div class="col4">
                                     <div class="card-container flex-col">
-                                        <figure>
+                                        <figure class="hidden" v-infocus="'show'">
                                             <img src="img/motivation-blog-03-480x325.jpg" alt="">
                                         </figure>
                                 
-                                        <div class="card-text">
+                                        <div class="card-text hidden" v-infocus="'show'">
                                             <div class="card-details">
                                                 <span class="lessons">
                                                     <span class="lessons-icon">
@@ -936,11 +936,11 @@
 
                                 <div class="col4">
                                     <div class="card-container flex-col">
-                                        <figure>
+                                        <figure class="hidden" v-infocus="'show'">
                                             <img src="img/motivation-blog-02-480x325.jpg" alt="">
                                         </figure>
                                 
-                                        <div class="card-text">
+                                        <div class="card-text hidden" v-infocus="'show'">
                                             <div class="card-details">
                                                 <span class="lessons">
                                                     <span class="lessons-icon">
@@ -964,11 +964,11 @@
                                 
                                 <div class="col4">
                                     <div class="card-container flex-col">
-                                        <figure>
+                                        <figure class="hidden" v-infocus="'show'">
                                             <img src="img/motivation-blog-01-480x325.jpg" alt="">
                                         </figure>
                                 
-                                        <div class="card-text">
+                                        <div class="card-text hidden" v-infocus="'show'">
                                             <div class="card-details">
                                                 <span class="lessons">
                                                     <span class="lessons-icon">
@@ -992,7 +992,7 @@
                             </div>
                         </div>
 
-                        <div class="center-row">
+                        <div class="center-row hidden" v-infocus="'show'">
                             <div class="fancy-link">
                                 <span class="fancy-link-text">
                                     <a href="#">View all posts</a>
@@ -1120,7 +1120,7 @@
             </div>
         </footer>
 
-        <div class="purchease-button">
+        <div class="purchease-button hidden" v-infocus="'show'">
             <div class="container">
                 <a href="#">
                     <img src="https://maxcoach.thememove.com/main/wp-content/themes/maxcoach-child-demo/assets/images/btn-purchase.jpg"
