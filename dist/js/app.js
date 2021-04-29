@@ -58,12 +58,18 @@ function initVue() {
     el: "#app",
     data: {
       scrollPosition: null,
-      cursorX: null,
-      cursorY: null,
+      movementX: 40,
+      movementY: 200,
+      mouseX: 0,
+      mouseY: 0,
       navHomeDropdown: navHomeData,
       navLinksDropdown: navLinksData,
       stories: storiesData,
-      storyIndex: 0
+      storyIndex: 0,
+      finishedSessions: 1.926,
+      satisfactionRate: 100,
+      EnrolledLearners: 3092,
+      OnlineInstructors: 200
     },
     mounted: function mounted() {
       // detect the page scroll
@@ -76,8 +82,35 @@ function initVue() {
         this.scrollPosition = window.scrollY;
       },
       getMousePosition: function getMousePosition(event) {
-        this.cursorX = event.pageX / 20;
-        this.cursorY = event.pageY / 20 + 200;
+        var posX = event.pageX;
+        var posY = event.pageY;
+
+        if (this.mouseX != 0 && this.mouseY != 0) {
+          if (posX > this.mouseX) {
+            this.movementX -= .08 * (posX - this.mouseX);
+            this.mouseX = posX;
+            console.log(this.movementX);
+          }
+
+          if (posX < this.mouseX) {
+            this.movementX += .08 * (this.mouseX - posX);
+            this.mouseX = posX;
+            console.log(this.movementX);
+          }
+
+          if (posY > this.mouseY) {
+            this.movementY -= .08 * (posY - this.mouseY);
+            this.mouseY = posY;
+          }
+
+          if (posY < this.mouseY) {
+            this.movementY += .08 * (this.mouseY - posY);
+            this.mouseY = posY;
+          }
+        } else {
+          this.mouseX = posX - 1;
+          this.mouseY = posY - 1;
+        }
       },
       changeStoryUp: function changeStoryUp() {
         if (this.storyIndex < this.stories.length - 1) {
