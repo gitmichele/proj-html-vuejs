@@ -153,8 +153,8 @@
             </nav>
             
             <div class="section-container">
-                <section id="jumbotron" class="flex-row">
-                    <div class="col2-half jumbo-text hidden" v-infocus="'show'">
+                <section id="jumbotron" class="flex-row hidden" v-infocus="'show'">
+                    <div class="col2-half jumbo-text">
                         <div class="title-container">
                             <h3>
                                 I'm Wingman
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col2-half jumbo-img hidden" v-infocus="'show'" :style="{'background-position-x': movementX + 'px', 'background-position-y': movementY + 'px'}">
+                    <div class="col2-half jumbo-img " :style="{'background-position-x': movementX + 'px', 'background-position-y': movementY + 'px'}">
                         <img src="img/home-movation-hero-image.png" alt="">
                     </div>
                 </section>
