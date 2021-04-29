@@ -1,3 +1,5 @@
+// POSITION AND VISIBILITY OF ELEMENTS
+
 *{
     margin: 0;
     padding: 0;
@@ -47,6 +49,7 @@
     background-color: #fff;
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
+// 2 classes for sections animations on scroll
 .hidden{
     opacity: 0;
     transform: translate(0, 50px)

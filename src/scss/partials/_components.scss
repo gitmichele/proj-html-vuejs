@@ -1,3 +1,5 @@
+// RECURRENT COMPONENTS
+
 // NAVBAR COMPONENTS
 // header-navbar
 .navbar-container{
@@ -55,7 +57,6 @@
         }
     }
 }
-
 // dropdown-container
 @mixin dropdown-container{
     background-color: white;
@@ -246,7 +247,6 @@
     color: $primary-color;
     font-family: roboto;
 }
-
 // quote
 .quote-container{
     padding: 55px;
@@ -287,7 +287,6 @@
         }
     }
 }
-
 // card
 .card-container{
     margin: 15px;
@@ -341,7 +340,6 @@
         }
     }
 }
-
 // book hover links
 .book-utility{
     position: absolute;
@@ -391,7 +389,6 @@
         }
     }
 }
-
 // slider button
 .slider-button{
     position: absolute;
@@ -425,7 +422,7 @@
         }
     }
 }
-
+// fancy link
 // hidden box for border magic
 .hidden-box{
     transition: .6s;
@@ -437,8 +434,7 @@
     bottom: -7px;
     left: -3px;
 }
-
-//fancy link
+//fancy link himself
 .fancy-link{
 
     .fancy-link-text{
@@ -478,7 +474,6 @@
         }
     }
 }
-
 // purchease button
 .purchease-button{
     position: fixed;

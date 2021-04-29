@@ -7,6 +7,7 @@
   \***********************/
 /***/ (() => {
 
+// DATA
 var navHomeData = {
   'linkName': 'Home',
   'dropdown': {
@@ -108,20 +109,25 @@ function initVue() {
   new Vue({
     el: "#app",
     data: {
-      scrollPosition: null,
-      movementX: 40,
-      movementY: 200,
-      mouseX: 0,
-      mouseY: 0,
+      // import data
       navHomeDropdown: navHomeData,
       navLinksDropdown: navLinksData,
       stories: storiesData,
+      // page vertical scrolling value
+      scrollPosition: null,
+      // background offsets for jumbotron
+      movementX: 40,
+      movementY: 200,
+      // mouse coordinates
+      mouseX: 0,
+      mouseY: 0,
+      // stories carousel index
       storyIndex: 0,
+      // numbers values (for appear animation !TO DO)
       finishedSessions: 1.926,
       satisfactionRate: 100,
       EnrolledLearners: 3092,
-      OnlineInstructors: 200,
-      scrollVal: null
+      OnlineInstructors: 200
     },
     mounted: function mounted() {
       // detect the page scroll
@@ -138,29 +144,40 @@ function initVue() {
         var posY = event.pageY;
 
         if (this.mouseX != 0 && this.mouseY != 0) {
+          // mouse move right
           if (posX > this.mouseX) {
-            this.movementX -= .08 * (posX - this.mouseX);
+            this.movementX -= .08 * (posX - this.mouseX); // bg move left
+
             this.mouseX = posX;
-          }
+          } // mouse move left
+
 
           if (posX < this.mouseX) {
-            this.movementX += .08 * (this.mouseX - posX);
+            this.movementX += .08 * (this.mouseX - posX); //bg move right
+
             this.mouseX = posX;
-          }
+          } //mouse move up
+
 
           if (posY > this.mouseY) {
-            this.movementY -= .08 * (posY - this.mouseY);
+            this.movementY -= .08 * (posY - this.mouseY); //bg move down
+
             this.mouseY = posY;
-          }
+          } //mouse move down
+
 
           if (posY < this.mouseY) {
-            this.movementY += .08 * (this.mouseY - posY);
+            this.movementY += .08 * (this.mouseY - posY); // bg move up
+
             this.mouseY = posY;
           }
-        } else {
-          this.mouseX = posX - 1;
-          this.mouseY = posY - 1;
-        }
+        } // first detection for mouse movement
+        // set default value similar to this first detection
+        // not equal because we need discrepancy for movement detection
+        else {
+            this.mouseX = posX - 1;
+            this.mouseY = posY - 1;
+          }
       },
       changeStoryUp: function changeStoryUp() {
         if (this.storyIndex < this.stories.length - 1) {
@@ -177,6 +194,7 @@ function initVue() {
         }
       }
     },
+    // create new directive for section animation on scroll
     directives: {
       infocus: {
         isLiteral: true,
