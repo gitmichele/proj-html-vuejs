@@ -102,17 +102,28 @@ function initVue() {
 
             scrollPosition: null,
 
+            cursorX: null,
+            cursorY: null,
+
             navHomeDropdown: navHomeData,
             navLinksDropdown: navLinksData,
         },
         mounted() {
+            // detect the page scroll
             window.addEventListener('scroll', this.getScrollPosition);
+            // detect the mouse movement
+            window.addEventListener('mousemove', this.getMousePosition)
         },
         methods: {
 
-            getScrollPosition() {
+            getScrollPosition: function() {
                 this.scrollPosition = window.scrollY
-            }
+            },
+            getMousePosition: function(event) {
+
+                this.cursorX = (event.pageX / 20);
+                this.cursorY = ((event.pageY / 20) + 200);
+            },
         }
     });
 };

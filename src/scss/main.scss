@@ -46,6 +46,10 @@ header{
         .jumbo-img{
 
             background-image: url(../img/home-movation-shape-face.png);
+            background-repeat: no-repeat;
+            background-position-x: 0;
+            background-position-y: 200px;
+            background-size: 90%;
 
             img{
                 max-width: 100%;

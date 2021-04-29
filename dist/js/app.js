@@ -37,15 +37,24 @@ function initVue() {
     el: "#app",
     data: {
       scrollPosition: null,
+      cursorX: null,
+      cursorY: null,
       navHomeDropdown: navHomeData,
       navLinksDropdown: navLinksData
     },
     mounted: function mounted() {
-      window.addEventListener('scroll', this.getScrollPosition);
+      // detect the page scroll
+      window.addEventListener('scroll', this.getScrollPosition); // detect the mouse movement
+
+      window.addEventListener('mousemove', this.getMousePosition);
     },
     methods: {
       getScrollPosition: function getScrollPosition() {
         this.scrollPosition = window.scrollY;
+      },
+      getMousePosition: function getMousePosition(event) {
+        this.cursorX = event.pageX / 20;
+        this.cursorY = event.pageY / 20 + 200;
       }
     }
   });
