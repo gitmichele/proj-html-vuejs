@@ -110,24 +110,13 @@
         visibility: visible;
         opacity: 1;
     }
-    // 25%{
-    //     top: 107.5%;
-    //     visibility: visible;
-    //     opacity: 1;    
-    // }
-    // 50%{
-    //     top: 105%;
-    //     visibility: visible;
-    //     opacity: 1;
-    // }
-    // 80%{
-    //     top: 102.5%;
-    //     visibility: visible;
-    //     opacity: 1;
-    // }
     100%{
         top: 97%;
         visibility: visible;
         opacity: 1;
     }
+}
+@mixin scroll-behavior{
+    transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: 0;
 }

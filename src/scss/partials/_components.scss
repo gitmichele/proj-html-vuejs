@@ -1,37 +1,4 @@
-// green-buttons
-.button-container{
-
-    a{
-        text-decoration: none;
-        color: #fff;
-        background-color: $primary-color;
-        text-align: center;
-        line-height: 1.3;
-        cursor: pointer;    
-        padding: 18px 55px;
-        border-radius: 5px;
-        transition: .4s;
-
-        div{
-            display: inline-block;
-        }
-        .button-text{
-            text-transform: capitalize;
-            font-family: roboto;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0em;
-            white-space: nowrap;
-        }
-        .button-icon{
-            margin-left: 10px;
-        }
-        &:hover{
-           background-color: $hover-button;
-        }
-    }
-}
-
+// NAVBAR COMPONENTS
 // header-navbar
 .navbar-container{
 
@@ -118,20 +85,39 @@
         }
     }
 }
-
+// fancy boxes for dropdown links element
+@mixin inner-dropdown-fancy-box{
+    color: #fff;
+    display: inline-block;
+    padding: 1px 10px;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 11px;
+    font-family: roboto;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 10px;
+}
+// hot box
+#hot-box{
+    @include inner-dropdown-fancy-box;
+    background-image: linear-gradient(45deg, #FE378C 0%, #FE5B34 100%);
+}
+#new-box{
+    @include inner-dropdown-fancy-box;
+    background-color: $primary-color;
+}
 // navbar homme link dropdown
 .home.dropdown{
     @include dropdown-container;
     width: 1180px;
     left: 18.5%;
 }
+// navbar other-links drobdown
 .links.dropdown{
     @include dropdown-container;
     padding-right: 100px;
 }
-
-// navbar other-links drobdown
-
 // social navbar
 .social-container{
 
@@ -181,7 +167,6 @@
         }
     }
 }
-
 // cloud message pop
 .cloud-msg{
     transition: visibility 0s, opacity 0.5s linear;
@@ -219,6 +204,41 @@
     }
 }
 
+
+// MAIN COMPOMENTS
+// green-buttons
+.button-container{
+
+    a{
+        text-decoration: none;
+        color: #fff;
+        background-color: $primary-color;
+        text-align: center;
+        line-height: 1.3;
+        cursor: pointer;    
+        padding: 18px 55px;
+        border-radius: 5px;
+        transition: .4s;
+
+        div{
+            display: inline-block;
+        }
+        .button-text{
+            text-transform: capitalize;
+            font-family: roboto;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0em;
+            white-space: nowrap;
+        }
+        .button-icon{
+            margin-left: 10px;
+        }
+        &:hover{
+           background-color: $hover-button;
+        }
+    }
+}
 // numbers
 .highlighted-num{
     font-size: 40px;

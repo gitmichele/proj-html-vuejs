@@ -58,7 +58,8 @@ header{
 
 // MAIN
 // dati/prima sezione del main
-.data-container{
+#data-container{
+    @include scroll-behavior;
 
     div:last-child{
 
@@ -69,7 +70,7 @@ header{
 
 // about me
 #about-container{
-
+    @include scroll-behavior;
     .section-small-title{
         
         h3{
@@ -113,6 +114,7 @@ header{
 
 // video+cit
 #video-section{
+    @include scroll-behavior;
 
     .video-container{
 
@@ -144,6 +146,7 @@ header{
 
 // begin your journey
 #journey-container{
+    @include scroll-behavior;
 
     .section-small-title{
 
@@ -175,6 +178,7 @@ header{
 
 // book store
 #book-store-container{
+    @include scroll-behavior;
 
     .section-small-title{
 
@@ -243,6 +247,7 @@ header{
 }
 // sponsors
 #sponsors-container{
+    @include scroll-behavior;
 
     ul{
         list-style: none;
@@ -264,6 +269,7 @@ header{
 
 // stories
 #stories-container{
+    @include scroll-behavior;
     
     .col2-half:first-child{
         background-color: #F6F6FD; 
@@ -308,6 +314,7 @@ header{
 
 // blog
 #blog-container{
+    @include scroll-behavior;
 
     .section-small-title{
 

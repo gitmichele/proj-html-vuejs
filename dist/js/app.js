@@ -10,8 +10,59 @@
 var navHomeData = {
   'linkName': 'Home',
   'dropdown': {
-    'col1': ['MaxCoach education', 'Course portal', 'Distant learning', 'Multimedia pedagogy', 'Modern Schooling', 'Remote Training', 'Health Coaching', 'Gym Coaching', 'Business'],
-    'col2': ['Artist', 'Kitchen Coach', 'Motivation', 'Dancing', 'Guitar', 'Yoga', 'Photography', 'Personal Finance'],
+    'col1': [{
+      'text': 'MaxCoach education',
+      'hot': 'yes'
+    }, {
+      'text': 'Course portal',
+      'hot': 'no'
+    }, {
+      'text': 'Distant learning',
+      'hot': 'yes'
+    }, {
+      'text': 'Multimedia pedagogy',
+      'hot': 'no'
+    }, {
+      'text': 'Modern Schooling',
+      'hot': 'no'
+    }, {
+      'text': 'Remote Training',
+      'hot': 'no'
+    }, {
+      'text': 'Health Coaching',
+      'hot': 'no'
+    }, {
+      'text': 'Gym Coaching',
+      'hot': 'no'
+    }, {
+      'text': 'Business',
+      'hot': 'no'
+    }],
+    'col2': [{
+      'text': 'Artist',
+      'new': 'no'
+    }, {
+      'text': 'Kitchen Coach',
+      'new': 'no'
+    }, {
+      'text': 'Motivation',
+      'new': 'no'
+    }, {
+      'text': 'Multimedia pedagogy',
+      'new': 'yes'
+    }, {
+      'text': 'Dancing',
+      'new': 'yes'
+    }, {
+      'text': 'Guitar',
+      'new': 'yes'
+    }, {
+      'text': 'Photography',
+      'new': 'yes'
+    }, {
+      'text': 'Personal Finance',
+      'new': 'yes'
+    }],
     'img': 'homepages-mega-menu-image-alt.jpg'
   }
 };
@@ -54,6 +105,17 @@ var storiesData = [{
 }];
 
 function initVue() {
+  Vue.directive('scroll', {
+    inserted: function inserted(el, binding) {
+      var f = function f(evt) {
+        if (binding.value(evt, el)) {
+          window.removeEventListener('scroll', f);
+        }
+      };
+
+      window.addEventListener('scroll', f);
+    }
+  });
   new Vue({
     el: "#app",
     data: {
@@ -69,13 +131,28 @@ function initVue() {
       finishedSessions: 1.926,
       satisfactionRate: 100,
       EnrolledLearners: 3092,
-      OnlineInstructors: 200
+      OnlineInstructors: 200,
+      scrollVal: null
     },
     mounted: function mounted() {
       // detect the page scroll
       window.addEventListener('scroll', this.getScrollPosition); // detect the mouse movement
 
       window.addEventListener('mousemove', this.getMousePosition);
+      window.addEventListener('load', function () {
+        //get the element
+        var elem = document.getElementById('data-container'); //get the distance scrolled on body (by default can be changed)
+
+        var distanceScrolled = document.body.scrollTop; //create viewport offset object
+
+        var elemRect = elem.getBoundingClientRect(); //get the offset from the element to the viewport
+
+        var elemViewportOffset = elemRect.top; //add them together
+
+        var totalOffset = distanceScrolled + elemViewportOffset; //log it, (look at the top of this example snippet)
+
+        this.scrollVal = totalOffset;
+      });
     },
     methods: {
       getScrollPosition: function getScrollPosition() {
@@ -89,13 +166,11 @@ function initVue() {
           if (posX > this.mouseX) {
             this.movementX -= .08 * (posX - this.mouseX);
             this.mouseX = posX;
-            console.log(this.movementX);
           }
 
           if (posX < this.mouseX) {
             this.movementX += .08 * (this.mouseX - posX);
             this.mouseX = posX;
-            console.log(this.movementX);
           }
 
           if (posY > this.mouseY) {
@@ -125,7 +200,13 @@ function initVue() {
         } else {
           this.storyIndex = 3;
         }
-      }
+      },
+      handleScroll: function handleScroll(evt, el) {
+        if (window.scrollY > this.scrollVal) {
+          el.setAttribute('style', 'opacity: 1; transform: translate3d(0, -10px, 0)');
+        }
+      },
+      handleCharge: function handleCharge() {}
     }
   });
 }

@@ -56,13 +56,25 @@
                                     <div class="home dropdown flex-row">
                                         <ul>
                                             <li v-for="dropLink in navHomeDropdown.dropdown.col1">
-                                                <a href="#"> {{ dropLink }} </a>
+                                                <a href="#"> 
+                                                    {{ dropLink.text }} 
+                                                    
+                                                    <div id="hot-box" v-if="dropLink.hot == 'yes'">
+                                                        Hot
+                                                    </div>
+                                                </a>
                                             </li>
                                         </ul>
 
                                         <ul>
                                             <li v-for="dropLink in navHomeDropdown.dropdown.col2">
-                                                <a href="#">{{ dropLink }}</a>
+                                                <a href="#">
+                                                    {{ dropLink.text }}
+                                                
+                                                    <div id="new-box" v-if="dropLink.new == 'yes'">
+                                                        New
+                                                    </div>
+                                                </a>
                                             </li>
                                         </ul>
 
@@ -186,7 +198,7 @@
             <!-- dati/prima sezione del main-->
             <section>
                 <div class="section-container">
-                    <div id="data-container">
+                    <div id="data-container"  v-scroll="handleScroll">
                         <div class="flex-row useless-padding">
                             <div class="col4">
                                 <div class="number-container">
@@ -243,7 +255,7 @@
             <!-- about me -->
             <section>
                 <div class="section-container">
-                    <div id="about-container">
+                    <div id="about-container" v-scroll="handleScroll">
                         <div class="section-small-title">
                             <h3>About Me</h3>
                         </div>
@@ -275,7 +287,7 @@
             <!-- video+cit -->
             <section>
                 <div class="section-container">
-                    <div id="video-section">
+                    <div id="video-section" v-scroll="handleScroll">
                         <div class="flex-row useless-padding">
                             <div class="video-container col2-big">
                                 <a href="#">
@@ -314,7 +326,7 @@
             <!-- begin your journey -->
             <section>
                 <div class="section-container">
-                    <div id="journey-container">
+                    <div id="journey-container" v-scroll="handleScroll">
                         <div class="center-row section-small-title">
                             <h3>Begin your journey at maxcoach</h3>
                         </div>
@@ -585,7 +597,7 @@
             <!-- book-store -->
             <section>
                 <div class="section-container">
-                    <div id="book-store-container">
+                    <div id="book-store-container" v-scroll="handleScroll">
                         <div class="flex-row">
                             <div class="col2-small">
                                 <div class="left-container">
@@ -774,7 +786,7 @@
             <!-- sponsors -->
             <section>
                 <div class="section-container">
-                    <div id="sponsors-container">
+                    <div id="sponsors-container" v-scroll="handleScroll">
                         <ul class="flex-row">
                             <li>
                                 <img src="img/client-logo-05-primary.png" alt="">
@@ -801,7 +813,7 @@
 
             <!-- real stories -->
             <section>
-                <div id="stories-container">
+                <div id="stories-container" v-scroll="handleScroll">
                     <div class="flex-row">
                         <div class="col2-half">
                             <div class="story-container flex-col">
@@ -854,7 +866,7 @@
 
             <!-- blog -->
             <section>
-                <div class="section-container">
+                <div class="section-container" v-scroll="handleScroll">
                     <div id="blog-container">
                         <div class="section-small-title useless-padding">
                             <h3>Blog updated</h3>
